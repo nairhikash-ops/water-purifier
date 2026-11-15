@@ -4,7 +4,8 @@ import {
   Droplet, 
   CheckCircle, 
   Info,
-  Activity
+  Activity,
+  Sparkles
 } from 'lucide-react';
 
 export default function TdsWaterGuide({ onOpenWaterTest }) {
@@ -15,7 +16,7 @@ export default function TdsWaterGuide({ onOpenWaterTest }) {
       return {
         label: "Low TDS / Demineralized Water",
         status: "Lacks Essential Minerals",
-        badgeColor: "bg-blue-950/80 text-blue-300 border-blue-500/30",
+        badgeColor: "bg-blue-50 text-blue-800 border-blue-200",
         taste: "Flat / Bland taste",
         health: "Lacks calcium & magnesium electrolytes.",
         recommendedTech: "Mineralizer Cartridge + Alkaline + UV",
@@ -25,7 +26,7 @@ export default function TdsWaterGuide({ onOpenWaterTest }) {
       return {
         label: "Optimal TDS / Sweet Mountain Balance",
         status: "Ideal Drinking Quality",
-        badgeColor: "bg-emerald-950/80 text-emerald-300 border-emerald-500/30",
+        badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200",
         taste: "Naturally crisp & pleasant sweet taste",
         health: "Safe and balanced for heart, kidneys, and bone development.",
         recommendedTech: "Active Alkaline + Copper Infusion + UV/UF",
@@ -35,7 +36,7 @@ export default function TdsWaterGuide({ onOpenWaterTest }) {
       return {
         label: "Moderate Hardness / Municipal & Tanker",
         status: "Needs Salt & Sediment Filtration",
-        badgeColor: "bg-amber-950/80 text-amber-300 border-amber-500/30",
+        badgeColor: "bg-amber-50 text-amber-800 border-amber-200",
         taste: "Slight chemical or metallic aftertaste",
         health: "Causes scaling in cookware and dry skin/hair over prolonged years.",
         recommendedTech: "7-Stage RO + Alkaline Technology",
@@ -45,7 +46,7 @@ export default function TdsWaterGuide({ onOpenWaterTest }) {
       return {
         label: "High TDS / Ground & Borewell Water",
         status: "Hard / Saline Water",
-        badgeColor: "bg-orange-950/80 text-orange-300 border-orange-500/30",
+        badgeColor: "bg-orange-50 text-orange-800 border-orange-200",
         taste: "Salty / Brackish water with strong white scaling on vessels",
         health: "Risk of kidney stress, indigestion, hair fall, and heavy metal exposure.",
         recommendedTech: "Multi-Stage High TDS RO + Copper + Active Alkaline",
@@ -55,7 +56,7 @@ export default function TdsWaterGuide({ onOpenWaterTest }) {
       return {
         label: "Critical Salinity / Heavy Contamination",
         status: "Hazardous Dissolved Solids",
-        badgeColor: "bg-rose-950/80 text-rose-300 border-rose-500/30",
+        badgeColor: "bg-rose-50 text-rose-800 border-rose-200",
         taste: "Unpalatable bitter, harsh saline taste",
         health: "High probability of arsenic, fluoride, lead, and dissolved industrial salts.",
         recommendedTech: "Industrial High-Pressure RO + Pre-Filter + Copper Alkaline",
@@ -67,34 +68,34 @@ export default function TdsWaterGuide({ onOpenWaterTest }) {
   const analysis = getTdsAnalysis(tdsValue);
 
   return (
-    <section id="tds-guide" className="py-20 bg-[#07090e] text-white border-b border-white/[0.08]">
+    <section id="tds-guide" className="py-20 bg-white text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-3 py-1 rounded-md mb-3">
-            <SlidersHorizontal className="w-3 h-3" />
-            Hazard & Membrane Matrix • Step 2 of 3
+          <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-sky-800 bg-sky-50 border border-sky-200 px-3.5 py-1.5 rounded-full mb-3 shadow-2xs">
+            <SlidersHorizontal className="w-3.5 h-3.5 text-sky-600" />
+            <span>Water Diagnostics & Filtration Chemistry</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight uppercase">
-            ANALYZE YOUR WATER'S <span className="metallic-copper-text">HIDDEN CHEMICAL LOAD.</span>
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight uppercase text-[#0a2540]">
+            ANALYZE YOUR WATER'S <span className="text-sky-600">DISSOLVED MINERAL LOAD.</span>
           </h2>
-          <p className="mt-3 text-xs sm:text-sm text-slate-400 font-light leading-relaxed">
-            Total Dissolved Solids (TDS) measures dissolved heavy salts, calcium, and micro-contaminants. 
-            Drag the dial to reveal the organ impact and identify the exact medical-grade membrane prescription needed.
+          <p className="mt-3 text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+            Total Dissolved Solids (TDS) measures dissolved salts, calcium, and micro-contaminants. 
+            Drag the dial to view the health impact and identify the exact membrane configuration required.
           </p>
         </div>
 
         {/* Interactive Console Card */}
-        <div className="max-w-4xl mx-auto luxury-glass rounded-3xl p-6 sm:p-10 border border-white/[0.1] shadow-2xl">
+        <div className="max-w-4xl mx-auto bg-slate-50 rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm">
           
           {/* Slider Header Display */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/[0.08]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-200">
             <div>
-              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Inlet TDS Reading</span>
+              <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Inlet Water TDS Reading</span>
               <div className="flex items-baseline gap-2 mt-1">
-                <span className="text-4xl sm:text-6xl font-black text-white">{tdsValue}</span>
-                <span className="text-sm sm:text-base font-bold text-cyan-400">PPM (mg/L)</span>
+                <span className="text-4xl sm:text-6xl font-black text-[#0a2540]">{tdsValue}</span>
+                <span className="text-sm sm:text-base font-bold text-sky-600">PPM (mg/L)</span>
               </div>
             </div>
 
@@ -115,62 +116,62 @@ export default function TdsWaterGuide({ onOpenWaterTest }) {
               value={tdsValue}
               onChange={(e) => setTdsValue(Number(e.target.value))}
               aria-label="Water TDS Slider"
-              className="w-full h-3 bg-black/60 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+              className="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-600"
             />
             
             {/* Scale Marks */}
             <div className="flex justify-between text-[10px] font-semibold text-slate-500 px-1 uppercase tracking-wider">
               <span>50 ppm (Soft)</span>
               <span className="hidden sm:inline">300 ppm (Ideal)</span>
-              <span>600 ppm (Tap/Tanker)</span>
+              <span>600 ppm (Municipal/Tanker)</span>
               <span className="hidden sm:inline">1200 ppm (Borewell)</span>
               <span>2000+ ppm (Saline)</span>
             </div>
           </div>
 
           {/* Result Box */}
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-2xl bg-black/40 border border-white/[0.08]">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs">
             <div className="space-y-3.5 text-xs">
               <div>
-                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest block">Classification</span>
-                <p className="text-sm font-bold text-white mt-0.5">{analysis.label}</p>
+                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Classification</span>
+                <p className="text-sm font-bold text-slate-900 mt-0.5">{analysis.label}</p>
               </div>
 
               <div>
-                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest block">Taste & Mineral Scale</span>
-                <p className="text-xs text-slate-300 mt-0.5 font-light">{analysis.taste}</p>
+                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Taste & Mineral Scale</span>
+                <p className="text-xs text-slate-600 mt-0.5 font-normal">{analysis.taste}</p>
               </div>
 
               <div>
-                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest block">Health Impact</span>
-                <p className="text-xs text-slate-300 mt-0.5 font-light">{analysis.health}</p>
+                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Health Impact</span>
+                <p className="text-xs text-slate-600 mt-0.5 font-normal">{analysis.health}</p>
               </div>
             </div>
 
-            <div className="p-5 rounded-xl bg-white/[0.03] border border-white/[0.08] flex flex-col justify-between">
+            <div className="p-5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
               <div>
-                <div className="flex items-center gap-1.5 text-white font-bold text-xs uppercase tracking-wider mb-2">
-                  <CheckCircle className="w-4 h-4 text-cyan-400" />
+                <div className="flex items-center gap-1.5 text-slate-900 font-bold text-xs uppercase tracking-wider mb-2">
+                  <CheckCircle className="w-4 h-4 text-sky-600" />
                   <span>Prescribed Technology</span>
                 </div>
-                <div className="text-xs font-black text-cyan-300 bg-cyan-950/60 px-3 py-2 rounded-lg border border-cyan-500/40 mb-2">
+                <div className="text-xs font-bold text-sky-800 bg-sky-100/70 px-3 py-2 rounded-lg border border-sky-200 mb-2">
                   {analysis.recommendedTech}
                 </div>
-                <p className="text-xs text-slate-400 font-light leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
                   {analysis.recommendation}
                 </p>
               </div>
 
               <div className="pt-4 flex flex-col sm:flex-row gap-2 mt-2">
                 <a
-                  href="#showcase"
-                  className="flex-1 bg-white/[0.08] hover:bg-white/[0.15] text-white text-xs font-semibold py-2.5 px-3 rounded-xl text-center border border-white/[0.1] transition"
+                  href="#options"
+                  className="flex-1 bg-white hover:bg-slate-100 text-slate-800 text-xs font-bold py-2.5 px-3 rounded-xl text-center border border-slate-300 transition"
                 >
                   View Suitable Models
                 </a>
                 <button
                   onClick={onOpenWaterTest}
-                  className="flex-1 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 text-white text-xs font-bold py-2.5 px-3 rounded-xl text-center transition shadow-lg shadow-cyan-500/20"
+                  className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 px-3 rounded-xl text-center transition shadow-xs"
                 >
                   Book Free On-Site Test
                 </button>
@@ -179,8 +180,8 @@ export default function TdsWaterGuide({ onOpenWaterTest }) {
           </div>
 
           <p className="text-[11px] text-center text-slate-500 mt-6 flex items-center justify-center gap-1.5">
-            <Info className="w-3.5 h-3.5 text-cyan-400" />
-            Unsure of your home's exact water TDS? Our certified technician will visit with a digital meter for free.
+            <Info className="w-3.5 h-3.5 text-sky-600" />
+            <span>Unsure of your home's exact water TDS? Our certified technician will visit with a digital meter completely free.</span>
           </p>
 
         </div>

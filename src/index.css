@@ -5,96 +5,72 @@
 @layer base {
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    background-color: #07090e;
-    color: #f1f5f9;
+    background-color: #f8fafc;
+    color: #0f172a;
     overflow-x: hidden;
   }
 }
 
 /* Custom scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #07090e;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 3px;
+  background: #cbd5e1;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #38bdf8;
+  background: #0284c7;
 }
 
-/* Luxury Lighting & Cinematic Animations */
-@keyframes ambientGlow {
-  0%, 100% {
-    opacity: 0.35;
-    transform: scale(1) translate(0px, 0px);
-  }
-  50% {
-    opacity: 0.65;
-    transform: scale(1.15) translate(20px, -20px);
-  }
+/* Smooth selection */
+::selection {
+  background: #0284c7;
+  color: #ffffff;
 }
 
-@keyframes floatSubtle {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-@keyframes metallicShimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.animate-ambient {
-  animation: ambientGlow 8s ease-in-out infinite alternate;
-}
-
-.animate-float {
-  animation: floatSubtle 6s ease-in-out infinite;
-}
-
+/* Luxury Light & Pristine Styling */
 .metallic-copper-text {
-  background: linear-gradient(135deg, #fce7db 0%, #e0a96d 50%, #c35817 100%);
+  background: linear-gradient(135deg, #c25e19 0%, #b45309 50%, #99300c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metallic-navy-text {
+  background: linear-gradient(135deg, #0a2540 0%, #0284c7 60%, #0369a1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .metallic-cyan-text {
-  background: linear-gradient(135deg, #ffffff 0%, #7dd3fc 40%, #0284c7 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #0369a1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.luxury-glass {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Card and Glass surfaces calibrated for light mode */
+.glacier-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
 }
 
-.luxury-glass-copper {
-  background: rgba(26, 17, 13, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(224, 169, 109, 0.25);
+.glacier-card-hover {
+  transition: all 0.25s ease-in-out;
+}
+.glacier-card-hover:hover {
+  transform: translateY(-3px);
+  border-color: #7dd3fc;
+  box-shadow: 0 16px 36px -6px rgba(2, 132, 199, 0.12);
 }
 
-.stage-light {
-  background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.18) 0%, rgba(14, 165, 233, 0) 70%);
-}
-
-.copper-stage-light {
-  background: radial-gradient(ellipse at center, rgba(217, 119, 54, 0.2) 0%, rgba(217, 119, 54, 0) 70%);
+.glacier-glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }

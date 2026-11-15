@@ -25,7 +25,7 @@ export default function TestimonialsAndFaq() {
       date: "Verified Homeowner • 2 weeks ago",
       tdsBefore: "950 PPM (Borewell)",
       tdsAfter: "110 PPM (Alkaline)",
-      comment: "Saved almost ₹7,000 compared to brand retail showrooms. The master technician arrived within hours, tested my borewell water in front of my family, neatly wall-mounted the machine without messy piping, and demoed the active copper infusion. The taste difference is night and day."
+      comment: "Saved almost ₹7,000 compared to brand retail showrooms. The technician arrived within hours, tested my borewell water in front of my family, neatly wall-mounted the machine without messy piping, and demoed the active copper infusion. The taste difference is night and day."
     },
     {
       name: "Dr. Ananya Sen",
@@ -47,7 +47,7 @@ export default function TestimonialsAndFaq() {
       date: "Verified Commercial Client • 3 weeks ago",
       tdsBefore: "820 PPM",
       tdsAfter: "85 PPM (Espresso Calibrated)",
-      comment: "Water is the unsung ingredient in specialty espresso. AquaPure provided a heavy 304-grade stainless steel skid at direct factory prices that rival distributors couldn't touch. Prompt quarterly AMC response keeps our café running without downtime."
+      comment: "Water is the unsung ingredient in specialty espresso. AquaPure provided a heavy 304-grade stainless steel skid at direct factory prices that rival distributors couldn't touch. Prompt quarterly response keeps our café running without downtime."
     }
   ];
 
@@ -83,70 +83,66 @@ export default function TestimonialsAndFaq() {
   };
 
   return (
-    <section id="reviews" className="py-24 bg-[#07090e] text-white border-b border-white/[0.08] relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/4 right-10 w-96 h-96 bg-cyan-600/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-amber-600/5 rounded-full blur-[140px] pointer-events-none" />
-
+    <section id="reviews" className="py-20 bg-white text-slate-900 border-b border-slate-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-amber-400 bg-amber-950/40 border border-amber-500/30 px-3.5 py-1 rounded-full mb-3">
-            <Award className="w-3.5 h-3.5" />
-            Verified Connoisseur Experiences
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 border border-amber-200 px-3.5 py-1.5 rounded-full mb-3 shadow-2xs">
+            <Award className="w-3.5 h-3.5 text-amber-600" />
+            <span>Verified Customer Reviews</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight uppercase">
-            Trusted by Over <span className="metallic-copper-text">5,000+ Sanctuaries</span>
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight uppercase text-[#0a2540]">
+            Trusted by Over <span className="text-sky-600">5,000+ Families</span>
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 font-light mt-3 max-w-xl mx-auto leading-relaxed">
-            Real families and specialty venues on upgrading to clinical-grade, antioxidant living water with zero middleman friction.
+          <p className="text-xs sm:text-sm text-slate-600 mt-3 max-w-xl mx-auto leading-relaxed font-normal">
+            Real families and local businesses on upgrading to antioxidant living water with zero middleman markup.
           </p>
         </div>
 
-        {/* Editorial Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {testimonials.map((t, idx) => (
             <div 
               key={idx}
-              className="rounded-3xl luxury-glass p-8 border border-white/[0.08] hover:border-amber-500/30 transition-all duration-300 flex flex-col justify-between group"
+              className="rounded-3xl bg-slate-50 p-7 border border-slate-200 shadow-2xs hover:shadow-md hover:border-sky-300 transition-all duration-200 flex flex-col justify-between group"
             >
               <div>
                 {/* Header Rating & Verified */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center text-amber-400 gap-1">
+                  <div className="flex items-center text-amber-500 gap-1">
                     {[...Array(t.rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                  <span className="text-[10px] font-black tracking-wider uppercase px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
-                    <CheckCircle2 className="w-3 h-3" />
+                  <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                     Verified
                   </span>
                 </div>
 
                 {/* TDS Differential Metric Pill */}
-                <div className="mb-4 p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-between text-[11px]">
-                  <span className="text-slate-400">Inlet: <strong className="text-rose-300 font-bold">{t.tdsBefore}</strong></span>
-                  <ArrowRight className="w-3 h-3 text-cyan-400" />
-                  <span className="text-slate-400">Purified: <strong className="text-emerald-300 font-bold">{t.tdsAfter}</strong></span>
+                <div className="mb-4 p-2.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between text-[11px]">
+                  <span className="text-slate-500">Inlet: <strong className="text-rose-600 font-bold">{t.tdsBefore}</strong></span>
+                  <ArrowRight className="w-3.5 h-3.5 text-sky-600" />
+                  <span className="text-slate-500">Output: <strong className="text-emerald-700 font-bold">{t.tdsAfter}</strong></span>
                 </div>
 
                 {/* Quote */}
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light italic">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal italic">
                   "{t.comment}"
                 </p>
               </div>
 
               {/* Author footer */}
-              <div className="mt-8 pt-5 border-t border-white/[0.06]">
+              <div className="mt-6 pt-4 border-t border-slate-200">
                 <div className="flex items-baseline justify-between">
                   <div>
-                    <h4 className="font-black text-white text-sm group-hover:text-amber-200 transition-colors">{t.name}</h4>
-                    <p className="text-[11px] text-slate-400">{t.role} • {t.location}</p>
+                    <h4 className="font-bold text-[#0a2540] text-sm">{t.name}</h4>
+                    <p className="text-[11px] text-slate-500">{t.role} • {t.location}</p>
                   </div>
                 </div>
-                <div className="text-[10px] font-bold text-cyan-400/90 mt-2 truncate">
+                <div className="text-[11px] font-bold text-sky-700 mt-1.5 truncate">
                   Purifier: {t.model}
                 </div>
               </div>
@@ -154,18 +150,18 @@ export default function TestimonialsAndFaq() {
           ))}
         </div>
 
-        {/* FAQs Architectural Accordion */}
+        {/* FAQs Accordion */}
         <div className="max-w-4xl mx-auto" id="faq">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-cyan-400 bg-cyan-950/40 border border-cyan-500/30 px-3.5 py-1 rounded-full mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
-              Direct Intelligence
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-sky-800 bg-sky-50 border border-sky-200 px-3.5 py-1.5 rounded-full mb-3 shadow-2xs">
+              <Sparkles className="w-3.5 h-3.5 text-sky-600" />
+              <span>Everything You Need to Know</span>
             </div>
-            <h3 className="text-2xl sm:text-4xl font-black tracking-tight uppercase">
-              Frequently Asked <span className="metallic-copper-text">Questions</span>
+            <h3 className="text-2xl sm:text-4xl font-black tracking-tight uppercase text-[#0a2540]">
+              Frequently Asked <span className="text-sky-600">Questions</span>
             </h3>
-            <p className="text-xs sm:text-sm text-slate-400 font-light mt-2">
-              Everything you need to know about engineering, TDS, and our direct factory privilege.
+            <p className="text-xs sm:text-sm text-slate-600 font-normal mt-2">
+              Clear answers regarding water chemistry, installation, warranty, and factory pricing.
             </p>
           </div>
 
@@ -176,33 +172,25 @@ export default function TestimonialsAndFaq() {
               return (
                 <div
                   key={idx}
-                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                     isOpen 
-                      ? 'bg-white/[0.04] border-cyan-500/40 shadow-lg shadow-cyan-950/20' 
-                      : 'bg-white/[0.02] border-white/[0.06] hover:border-white/[0.15]'
+                      ? 'bg-sky-50/70 border-sky-300 shadow-xs' 
+                      : 'bg-slate-50 border-slate-200 hover:border-slate-300'
                   }`}
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? -1 : idx)}
-                    className="w-full text-left p-5 sm:p-6 font-bold text-sm sm:text-base flex items-center justify-between transition-colors gap-4"
+                    className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 font-bold text-[#0a2540] text-xs sm:text-sm"
                   >
-                    <div className="flex items-center gap-4">
-                      <span className="font-mono text-xs font-black text-cyan-400/80 tracking-widest">
-                        {formattedIndex}
-                      </span>
-                      <span className="text-white group-hover:text-amber-200">
-                        {faq.q}
-                      </span>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-mono font-bold text-sky-600">{formattedIndex}</span>
+                      <span>{faq.q}</span>
                     </div>
-                    {isOpen ? (
-                      <ChevronUp className="w-4 h-4 text-cyan-400 shrink-0" />
-                    ) : (
-                      <ChevronDown className="w-4 h-4 text-slate-500 shrink-0" />
-                    )}
+                    {isOpen ? <ChevronUp className="w-4 h-4 text-sky-600 shrink-0" /> : <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />}
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed font-light border-t border-white/[0.04] pt-4 pl-14">
+                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal border-t border-sky-100">
                       {faq.a}
                     </div>
                   )}
@@ -211,27 +199,19 @@ export default function TestimonialsAndFaq() {
             })}
           </div>
 
-          {/* Ask Anything WhatsApp Banner */}
-          <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-cyan-950/30 to-amber-950/30 border border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-center sm:text-left">
-              <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/[0.1] flex items-center justify-center text-cyan-400 shrink-0">
-                <MessageCircle className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-white">Have a specific water test or custom requirement?</h4>
-                <p className="text-xs text-slate-400 font-light">Speak directly with our senior water chemist on WhatsApp.</p>
-              </div>
+          {/* Still Have Questions Bar */}
+          <div className="mt-10 p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+              <h4 className="font-bold text-[#0a2540] text-sm">Have a unique borewell or plumbing question?</h4>
+              <p className="text-xs text-slate-500">Our senior technician is on standby to advise you on WhatsApp.</p>
             </div>
-
             <button
               onClick={handleConsultWhatsApp}
-              className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.2] text-xs font-black uppercase tracking-wider text-white transition flex items-center justify-center gap-2 shrink-0"
+              className="px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs uppercase tracking-wider transition shadow-2xs"
             >
-              Ask Senior Chemist
-              <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
+              Ask on WhatsApp
             </button>
           </div>
-
         </div>
 
       </div>

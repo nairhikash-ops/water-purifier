@@ -47,7 +47,7 @@ export default function AmcAndServices({ onBookingSuccess }) {
     confetti({ particleCount: 70, spread: 60, origin: { y: 0.7 } });
     setFormSubmitted(true);
 
-    const waText = `*🔧 Single-Visit Water Purifier Repair Request (ID: ${saved.id})*\n\n`
+    const waText = `*🔧 Water Purifier Doorstep Service Request (ID: ${saved.id})*\n\n`
       + `*Customer:* ${serviceForm.name}\n`
       + `*Phone:* ${serviceForm.phone}\n`
       + `*Address:* ${serviceForm.address} (PIN: ${serviceForm.pincode})\n`
@@ -61,81 +61,81 @@ export default function AmcAndServices({ onBookingSuccess }) {
   };
 
   return (
-    <section id="concierge" className="py-20 bg-[#070a10] text-white border-b border-white/[0.08] relative">
+    <section id="concierge" className="py-20 bg-slate-50 text-slate-900 border-b border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Streamlined Section Header (Positioned as Side Selling Reassurance) */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-white/[0.06]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-slate-200">
           <div>
-            <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-400 bg-white/[0.04] border border-white/[0.08] px-3 py-1 rounded-md mb-2">
-              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-              Secondary Service Assurance • Zero Lock-In
+            <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-600 bg-white border border-slate-200 px-3 py-1 rounded-md mb-2 shadow-2xs">
+              <ShieldCheck className="w-3.5 h-3.5 text-sky-600" />
+              <span>Secondary Service Assurance • Zero Lock-In</span>
             </div>
-            <h3 className="text-2xl sm:text-4xl font-black tracking-tight uppercase">
-              Lifetime Purity Shield & <span className="text-slate-400 font-light">Care Memberships</span>
+            <h3 className="text-2xl sm:text-4xl font-black tracking-tight uppercase text-[#0a2540]">
+              Lifetime Purity Shield & <span className="text-sky-600 font-bold">Care Memberships</span>
             </h3>
           </div>
 
-          <p className="text-xs text-slate-400 max-w-md font-light leading-relaxed">
+          <p className="text-xs text-slate-600 max-w-md font-normal leading-relaxed">
             Never worry about filter longevity or membrane fouling. Once your living water is running, our master care subscriptions keep your output certified 365 days a year from ₹125/month.
           </p>
         </div>
 
-        {/* 3 Compact Metal AMC Cards */}
+        {/* 3 Compact AMC Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {AMC_PLANS.map((plan) => {
             const isPopular = plan.isPopular;
             return (
               <div
                 key={plan.id}
-                className={`rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between border ${
+                className={`rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between border bg-white ${
                   isPopular
-                    ? 'bg-gradient-to-b from-amber-950/20 to-black/60 border-amber-500/40 shadow-xl shadow-amber-950/20'
-                    : 'bg-white/[0.02] border-white/[0.06] hover:border-white/[0.15]'
+                    ? 'border-amber-400 ring-2 ring-amber-400/20 shadow-lg'
+                    : 'border-slate-200 hover:border-slate-300 shadow-2xs'
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                       {plan.tagline}
                     </span>
                     {isPopular && (
-                      <span className="text-[9px] font-black uppercase px-2 py-0.5 rounded bg-amber-500 text-black">
-                        Recommended
+                      <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-300">
+                        Most Popular
                       </span>
                     )}
                   </div>
 
-                  <h4 className="text-lg font-black text-white">{plan.name}</h4>
+                  <h4 className="text-lg font-black text-[#0a2540]">{plan.name}</h4>
                   
                   <div className="flex items-baseline gap-2 my-3">
-                    <span className="text-2xl font-black text-white font-mono">
+                    <span className="text-2xl font-black text-[#0a2540]">
                       ₹{plan.price.toLocaleString('en-IN')}
                     </span>
                     <span className="text-xs text-slate-500">/ year</span>
                   </div>
 
-                  <p className="text-xs text-slate-400 font-light mb-4">
+                  <p className="text-xs text-slate-500 mb-4 font-normal">
                     {plan.desc}
                   </p>
 
-                  <div className="space-y-2 text-xs border-t border-white/[0.06] pt-3">
+                  <div className="space-y-2 text-xs border-t border-slate-100 pt-3">
                     {plan.features.slice(0, 4).map((f, i) => (
                       <div key={i} className="flex items-start gap-2">
-                        <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                        <span className="text-slate-300 text-[11px] font-light">{f}</span>
+                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                        <span className="text-slate-600 text-[11px]">{f}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-5 mt-4 border-t border-white/[0.06]">
+                <div className="pt-5 mt-4 border-t border-slate-100">
                   <button
                     onClick={() => handlePlanWhatsApp(plan)}
                     className={`w-full py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition ${
                       isPopular
-                        ? 'bg-amber-500 hover:bg-amber-400 text-black font-black'
-                        : 'bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1]'
+                        ? 'bg-amber-600 hover:bg-amber-700 text-white font-black shadow-xs'
+                        : 'bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200'
                     }`}
                   >
                     Activate {plan.name.split(' ')[0]} Care
@@ -147,90 +147,94 @@ export default function AmcAndServices({ onBookingSuccess }) {
         </div>
 
         {/* Existing Purifier Repair Toggle */}
-        <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-amber-400 shrink-0">
-              <Wrench className="w-4 h-4" />
+            <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 shrink-0">
+              <Wrench className="w-5 h-5" />
             </div>
             <div>
-              <span className="font-bold text-white block">Have an existing purifier (Kent, Aquaguard, Pureit, Livpure) that needs service?</span>
-              <span className="text-slate-400 font-light">Book a single-visit doorstep inspection & TDS check for ₹399.</span>
+              <span className="font-bold text-slate-900 block text-sm">
+                Have an existing purifier (Kent, Aquaguard, Pureit, Livpure) that needs repair?
+              </span>
+              <span className="text-slate-500 font-normal">
+                Book a single-visit doorstep inspection, leak check & calibrated TDS test for ₹399.
+              </span>
             </div>
           </div>
 
           <button
             onClick={() => setShowRepairForm(!showRepairForm)}
-            className="w-full sm:w-auto px-4 py-2 rounded-xl bg-white/[0.08] hover:bg-white/[0.15] text-white font-bold transition shrink-0"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold border border-slate-300 transition shrink-0"
           >
-            {showRepairForm ? 'Hide Repair Form' : 'Book Single Visit (₹399)'}
+            {showRepairForm ? 'Close Repair Form' : 'Book Single Visit (₹399)'}
           </button>
         </div>
 
         {/* Collapsible Repair Form */}
         {showRepairForm && (
-          <div className="mt-4 p-6 rounded-2xl bg-[#0c101a] border border-white/[0.1] animate-fadeIn max-w-2xl mx-auto">
+          <div className="mt-4 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-md animate-fadeIn max-w-2xl mx-auto">
             {formSubmitted ? (
               <div className="text-center py-6 space-y-2">
-                <Check className="w-8 h-8 text-emerald-400 mx-auto" />
-                <h4 className="font-bold text-white text-base">Service Request Sent!</h4>
-                <p className="text-xs text-slate-400">Our service coordinator will confirm your technician arrival time on WhatsApp.</p>
+                <Check className="w-8 h-8 text-emerald-600 mx-auto" />
+                <h4 className="font-bold text-slate-900 text-base">Service Request Sent!</h4>
+                <p className="text-xs text-slate-600">Our service coordinator will confirm your technician arrival time on WhatsApp.</p>
               </div>
             ) : (
               <form onSubmit={handleServiceSubmit} className="space-y-3 text-xs">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-slate-400 mb-1">Your Name *</label>
+                    <label className="block text-slate-700 font-bold mb-1">Your Name *</label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Anand Sharma"
                       value={serviceForm.name}
                       onChange={(e) => setServiceForm({ ...serviceForm, name: e.target.value })}
-                      className="w-full px-3 py-2 bg-white/[0.04] border border-white/[0.1] rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                      className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:bg-white transition"
                     />
                   </div>
                   <div>
-                    <label className="block text-slate-400 mb-1">WhatsApp / Contact Number *</label>
+                    <label className="block text-slate-700 font-bold mb-1">WhatsApp / Contact Number *</label>
                     <input
                       type="tel"
                       required
                       placeholder="e.g. 9876543210"
                       value={serviceForm.phone}
                       onChange={(e) => setServiceForm({ ...serviceForm, phone: e.target.value })}
-                      className="w-full px-3 py-2 bg-white/[0.04] border border-white/[0.1] rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                      className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:bg-white transition"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-slate-400 mb-1">Address *</label>
+                  <label className="block text-slate-700 font-bold mb-1">Address *</label>
                   <input
                     type="text"
                     required
                     placeholder="House/Flat No, Society, Area"
                     value={serviceForm.address}
                     onChange={(e) => setServiceForm({ ...serviceForm, address: e.target.value })}
-                    className="w-full px-3 py-2 bg-white/[0.04] border border-white/[0.1] rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:bg-white transition"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-slate-400 mb-1">Current Brand</label>
+                    <label className="block text-slate-700 font-bold mb-1">Current Brand</label>
                     <input
                       type="text"
                       placeholder="e.g. Kent / Aquaguard"
                       value={serviceForm.brand}
                       onChange={(e) => setServiceForm({ ...serviceForm, brand: e.target.value })}
-                      className="w-full px-3 py-2 bg-white/[0.04] border border-white/[0.1] rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                      className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:bg-white transition"
                     />
                   </div>
                   <div>
-                    <label className="block text-slate-400 mb-1">Preferred Slot</label>
+                    <label className="block text-slate-700 font-bold mb-1">Preferred Slot</label>
                     <select
                       value={serviceForm.preferredSlot}
                       onChange={(e) => setServiceForm({ ...serviceForm, preferredSlot: e.target.value })}
-                      className="w-full px-3 py-2 bg-[#141a27] border border-white/[0.1] rounded-xl text-white focus:outline-none focus:border-cyan-400"
+                      className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-sky-500 focus:bg-white transition"
                     >
                       <option value="Morning (10:00 AM - 1:00 PM)">Morning (10am - 1pm)</option>
                       <option value="Afternoon (1:00 PM - 5:00 PM)">Afternoon (1pm - 5pm)</option>
@@ -241,7 +245,7 @@ export default function AmcAndServices({ onBookingSuccess }) {
 
                 <button
                   type="submit"
-                  className="w-full mt-2 py-3 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold rounded-xl flex items-center justify-center gap-2 transition"
+                  className="w-full mt-2 py-3 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold rounded-xl flex items-center justify-center gap-2 transition shadow-xs"
                 >
                   <span>Dispatch Technician on WhatsApp (₹399)</span>
                 </button>

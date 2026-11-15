@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustBar from './components/TrustBar';
-import WaterVitalitySection from './components/WaterVitalitySection';
 import CinematicShowcase from './components/CinematicShowcase';
+import WaterVitalitySection from './components/WaterVitalitySection';
 import TdsWaterGuide from './components/TdsWaterGuide';
 import AmcAndServices from './components/AmcAndServices';
 import TestimonialsAndFaq from './components/TestimonialsAndFaq';
@@ -69,7 +69,7 @@ export default function App() {
   const totalCartCount = cartItems.reduce((acc, i) => acc + i.quantity, 0);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#07090e] text-slate-100 selection:bg-cyan-500 selection:text-black">
+    <div className="min-h-screen flex flex-col bg-[#f8fafc] text-slate-900 selection:bg-sky-600 selection:text-white">
       {/* Navbar */}
       <Navbar
         cartCount={totalCartCount}
@@ -81,26 +81,39 @@ export default function App() {
 
       {/* Main Body */}
       <main className="flex-1 pb-16 sm:pb-0">
+        {/* 1. Hero: Value Proposition + Pricing Range + 5-Sec Water Matcher */}
         <Hero
           onOpenQuiz={() => setQuizOpen(true)}
           onOpenWaterTest={() => setWaterTestOpen(true)}
         />
+
+        {/* 2. Trust Credentials Bar: ₹0 Advance, Free Installation, 1-Yr Warranty */}
         <TrustBar />
-        <WaterVitalitySection
-          onOpenQuiz={() => setQuizOpen(true)}
-          onOpenWaterTest={() => setWaterTestOpen(true)}
-        />
-        <TdsWaterGuide
-          onOpenWaterTest={() => setWaterTestOpen(true)}
-        />
+
+        {/* 3. Studio Purifier Gallery: Front & Center for Google Ads Visitors */}
         <CinematicShowcase
           onSelectProduct={(prod) => setSelectedProduct(prod)}
           onAddToCart={handleAddToCart}
         />
-        <TestimonialsAndFaq />
-        <AmcAndServices
-          onBookingSuccess={() => {}}
+
+        {/* 4. Water Vitality & Science: Why Active Copper + Alkaline beats Dead RO */}
+        <WaterVitalitySection
+          onOpenQuiz={() => setQuizOpen(true)}
+          onOpenWaterTest={() => setWaterTestOpen(true)}
         />
+
+        {/* 5. TDS Water Guide & Diagnostic Slider */}
+        <TdsWaterGuide
+          onOpenWaterTest={() => setWaterTestOpen(true)}
+        />
+
+        {/* 6. Doorstep AMC & Repair Shield (Side selling assurance) */}
+        <AmcAndServices
+          onBookingSuccess={(lead) => console.log('Booking saved:', lead)}
+        />
+
+        {/* 7. Verified Reviews & Frequently Asked Questions */}
+        <TestimonialsAndFaq />
       </main>
 
       {/* Footer */}
@@ -110,7 +123,14 @@ export default function App() {
         onOpenQuiz={() => setQuizOpen(true)}
       />
 
-      {/* Modals & Overlays */}
+      {/* Persistent Floating Quick Actions (Call & WhatsApp) */}
+      <FloatingActions
+        cartCount={totalCartCount}
+        onOpenCart={() => setCartOpen(true)}
+        onOpenWaterTest={() => setWaterTestOpen(true)}
+      />
+
+      {/* Modals & Drawers */}
       <ProductModal
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
@@ -121,7 +141,6 @@ export default function App() {
         isOpen={quizOpen}
         onClose={() => setQuizOpen(false)}
         onSelectProduct={(prod) => setSelectedProduct(prod)}
-        onAddToCart={handleAddToCart}
       />
 
       <FreeWaterTestModal
@@ -136,7 +155,10 @@ export default function App() {
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}
         onClearCart={handleClearCart}
-        onOrderCompleted={(ord) => setCompletedOrder(ord)}
+        onOrderSuccess={(orderData) => {
+          setCartOpen(false);
+          setCompletedOrder(orderData);
+        }}
       />
 
       <OrderSuccessModal
@@ -147,13 +169,6 @@ export default function App() {
       <AdminLeadsModal
         isOpen={adminOpen}
         onClose={() => setAdminOpen(false)}
-      />
-
-      {/* Floating Buttons */}
-      <FloatingActions
-        cartCount={totalCartCount}
-        onOpenCart={() => setCartOpen(true)}
-        onOpenWaterTest={() => setWaterTestOpen(true)}
       />
     </div>
   );

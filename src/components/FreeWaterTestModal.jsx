@@ -39,8 +39,8 @@ export default function FreeWaterTestModal({ isOpen, onClose }) {
     const waMsg = `*💧 Free Water TDS Diagnostic Audit Request (Lead ID: ${saved.id})*\n\n`
       + `*Name:* ${form.name}\n`
       + `*Phone:* ${form.phone}\n`
-      + `*Sanctuary Address:* ${form.address} (PIN: ${form.pincode})\n`
-      + `*Inlet Water Source:* ${form.waterSource}\n`
+      + `*Address:* ${form.address} (PIN: ${form.pincode})\n`
+      + `*Water Source:* ${form.waterSource}\n`
       + `*Preferred Timing:* ${form.preferredTime}\n\n`
       + `Please dispatch a certified technician with a calibrated digital TDS & mineral testing kit.`;
 
@@ -48,29 +48,29 @@ export default function FreeWaterTestModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
       <div 
-        className="relative bg-[#0c101a] text-white w-full max-w-lg rounded-3xl shadow-2xl border border-white/[0.12] overflow-hidden my-8"
+        className="relative bg-white text-slate-900 w-full max-w-lg rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-8"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-emerald-950/80 via-[#0c101a] to-teal-950/60 p-6 sm:p-7 border-b border-white/[0.08] relative">
+        <div className="bg-emerald-50 p-6 sm:p-7 border-b border-emerald-100 relative">
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full bg-white/[0.08] hover:bg-white/[0.15] text-slate-300 hover:text-white border border-white/[0.1] transition"
+            className="absolute top-5 right-5 p-2 rounded-full bg-white hover:bg-slate-100 text-slate-500 hover:text-slate-800 border border-slate-200 transition"
           >
             <X className="w-5 h-5" />
           </button>
 
-          <div className="inline-flex items-center gap-2 text-emerald-400 text-[10px] font-black uppercase tracking-widest bg-emerald-950/60 border border-emerald-500/30 px-3 py-1 rounded-full mb-3">
-            <Droplets className="w-3.5 h-3.5" />
-            100% Complimentary Doorstep Service
+          <div className="inline-flex items-center gap-2 text-emerald-800 text-[10px] font-bold uppercase tracking-wider bg-white border border-emerald-200 px-3 py-1 rounded-full mb-3 shadow-2xs">
+            <Droplets className="w-3.5 h-3.5 text-emerald-600" />
+            <span>100% Complimentary Doorstep Visit</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight">
-            Schedule Free <span className="text-emerald-400">TDS & Mineral Audit</span>
+          <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#0a2540]">
+            Schedule Free <span className="text-emerald-700">TDS & Mineral Audit</span>
           </h3>
-          <p className="text-xs text-slate-400 font-light mt-1">
-            Our certified water technician tests inlet salinity, hardness, and molecular purity directly at your tap.
+          <p className="text-xs text-slate-600 mt-1">
+            Our certified technician tests inlet salinity, hardness, and molecular purity directly at your kitchen tap.
           </p>
         </div>
 
@@ -78,120 +78,109 @@ export default function FreeWaterTestModal({ isOpen, onClose }) {
         <div className="p-6 sm:p-7">
           {submitted ? (
             <div className="text-center py-8 space-y-3">
-              <div className="w-14 h-14 bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 rounded-full flex items-center justify-center mx-auto">
+              <div className="w-14 h-14 bg-emerald-100 border border-emerald-300 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
                 <Check className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-black text-white">Diagnostic Audit Reserved!</h4>
-              <p className="text-xs text-slate-400 max-w-xs mx-auto font-light">
-                We've routed your request to our regional master chemist. A coordinator will verify your technician's arrival window.
+              <h4 className="text-xl font-black text-slate-900">Audit Request Reserved!</h4>
+              <p className="text-xs text-slate-600 max-w-xs mx-auto">
+                We've routed your request to our regional coordinator. A technician arrival window will be confirmed shortly on WhatsApp.
               </p>
               <button
                 onClick={onClose}
-                className="mt-4 px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-black uppercase tracking-wider rounded-xl shadow transition"
+                className="mt-4 px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-xs transition"
               >
-                Close Console
+                Close Window
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1.5">Full Name *</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Full Name *</label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Vikram Malhotra"
+                  placeholder="e.g. Priyesh Shah"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-white/[0.04] border border-white/[0.1] rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition"
+                  className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white text-xs sm:text-sm transition"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1.5">WhatsApp / Contact Number *</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1">WhatsApp / Contact Number *</label>
                 <input
                   type="tel"
                   required
                   placeholder="e.g. 9876543210"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-white/[0.04] border border-white/[0.1] rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition"
+                  className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white text-xs sm:text-sm transition"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1.5">Sanctuary Address *</label>
-                <input
-                  type="text"
+                <label className="block text-xs font-bold text-slate-700 mb-1">Installation Address *</label>
+                <textarea
                   required
-                  placeholder="Apartment/Villa No, Society, Area, Landmark"
+                  rows="2"
+                  placeholder="Flat/House No, Building, Landmark, Area"
                   value={form.address}
                   onChange={(e) => setForm({ ...form, address: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-white/[0.04] border border-white/[0.1] rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition"
+                  className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white text-xs sm:text-sm transition"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-slate-300 mb-1.5">Pincode</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Pincode</label>
                   <input
                     type="text"
                     placeholder="e.g. 400050"
                     value={form.pincode}
                     onChange={(e) => setForm({ ...form, pincode: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-white/[0.04] border border-white/[0.1] rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition"
+                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white text-xs sm:text-sm transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-300 mb-1.5">Inlet Source</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Inlet Water</label>
                   <select
                     value={form.waterSource}
                     onChange={(e) => setForm({ ...form, waterSource: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-[#141a27] border border-white/[0.1] rounded-xl text-xs sm:text-sm text-white focus:outline-none focus:border-emerald-500 transition"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-emerald-500 focus:bg-white text-xs sm:text-sm transition"
                   >
-                    <option value="Borewell / Groundwater">Borewell / Groundwater</option>
-                    <option value="Municipal Corporation">Municipal Corporation</option>
-                    <option value="Water Tanker">Water Tanker</option>
-                    <option value="Not Sure">Not Sure / Mixed</option>
+                    <option value="Borewell / Groundwater">Borewell (Hard)</option>
+                    <option value="Municipal Corporation">Municipal / Kaveri</option>
+                    <option value="Water Tanker">Private Tanker</option>
+                    <option value="Unsure">Unsure (Test First)</option>
                   </select>
                 </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1.5">Preferred Audit Window</label>
-                <select
-                  value={form.preferredTime}
-                  onChange={(e) => setForm({ ...form, preferredTime: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-[#141a27] border border-white/[0.1] rounded-xl text-xs sm:text-sm text-white focus:outline-none focus:border-emerald-500 transition"
-                >
-                  <option value="Today (Urgent)">Today (Earliest Possible)</option>
-                  <option value="Tomorrow Morning (10am - 1pm)">Tomorrow Morning (10am - 1pm)</option>
-                  <option value="Tomorrow Evening (4pm - 8pm)">Tomorrow Evening (4pm - 8pm)</option>
-                  <option value="This Weekend">This Coming Weekend</option>
-                </select>
-              </div>
-
               <button
                 type="submit"
-                className="w-full mt-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-black py-3.5 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition uppercase tracking-wider"
+                className="w-full mt-2 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md shadow-emerald-600/20 transition flex items-center justify-center gap-2"
               >
-                <span>Dispatch Water Chemist</span>
-                <Sparkles className="w-4 h-4" />
+                <span>Confirm Complimentary Visit</span>
               </button>
-
-              <div className="pt-2 flex items-center justify-center gap-4 text-[11px] text-slate-400">
-                <span className="flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> ₹0 Cost
-                </span>
-                <span className="flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> Digital Multi-Parameter Meter
-                </span>
-                <span className="flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> Zero Purchase Obligation
-                </span>
-              </div>
             </form>
           )}
+
+          <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-center gap-6 text-[11px] text-slate-500">
+            <span className="flex items-center gap-1">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              100% Free Service
+            </span>
+            <span className="flex items-center gap-1">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              Digital TDS Meter
+            </span>
+            <span className="flex items-center gap-1">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              Zero Obligation
+            </span>
+          </div>
+
         </div>
       </div>
     </div>

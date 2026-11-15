@@ -1,13 +1,12 @@
 import React from 'react';
 import { 
-  BadgePercent, 
+  Lock, 
   Truck, 
   ShieldCheck, 
   Droplet,
   Sparkles,
   Award,
-  CheckCircle2,
-  Lock
+  CheckCircle2
 } from 'lucide-react';
 
 export default function TrustBar() {
@@ -16,81 +15,71 @@ export default function TrustBar() {
       icon: Lock,
       tag: "Total Risk Reversal",
       title: "Pay Only On TDS Proof",
-      desc: "Zero advance deposit required. The master technician mounts the system and proves TDS drop before your eyes before you pay.",
-      accent: "text-emerald-400 group-hover:text-emerald-300",
-      glow: "from-emerald-500/10 to-transparent",
+      desc: "Zero advance payment. Our technician mounts the system and proves the TDS drop in front of you before you pay.",
+      iconBg: "bg-emerald-50 text-emerald-600 border-emerald-200",
       badge: "₹0 Advance"
     },
     {
       icon: Truck,
-      tag: "White Glove Deployment",
-      title: "24-48h Doorstep Setup",
-      desc: "Certified master technicians deliver, precision wall-mount, calibrate TDS, and demo alkaline copper taste complimentary.",
-      accent: "text-cyan-400 group-hover:text-cyan-300",
-      glow: "from-cyan-500/10 to-transparent",
-      badge: "Complimentary"
+      tag: "Doorstep Express",
+      title: "Complimentary Setup",
+      desc: "Certified technicians deliver, neat wall-mount, calibrate TDS, and demonstrate pure alkaline water taste at zero charge.",
+      iconBg: "bg-sky-50 text-sky-600 border-sky-200",
+      badge: "Free Installation"
     },
     {
       icon: ShieldCheck,
-      tag: "Complete Sanctuary Shield",
+      tag: "Sanctuary Shield",
       title: "1-Year On-Site Warranty",
-      desc: "Full comprehensive coverage for booster pump, SMPS electrical adapter, Solenoid Valve, and all technician labor with 24h SLA.",
-      accent: "text-amber-400 group-hover:text-amber-300",
-      glow: "from-amber-500/10 to-transparent",
-      badge: "100% Protected"
+      desc: "Full comprehensive coverage for booster pump, SMPS electrical adapter, Solenoid Valve, and technician visits.",
+      iconBg: "bg-amber-50 text-amber-700 border-amber-200",
+      badge: "100% Covered"
     },
     {
       icon: Droplet,
-      tag: "Clinical Bio-Safety",
-      title: "100% Certified Spares",
-      desc: "Zero toxic recycled plastics. Authentic 80 GPD heavy-duty membranes, NSF-certified minerals, and food-grade virgin housings.",
-      accent: "text-sky-400 group-hover:text-sky-300",
-      glow: "from-sky-500/10 to-transparent",
+      tag: "Certified Chemistry",
+      title: "NSF-Grade Components",
+      desc: "Zero recycled plastic. Heavy-duty 80 GPD membranes, authentic copper cartridges, and food-grade virgin housings.",
+      iconBg: "bg-blue-50 text-blue-600 border-blue-200",
       badge: "Pure Bio-Safe"
     }
   ];
 
   return (
-    <div className="py-12 bg-[#06080d] border-y border-white/[0.08] relative overflow-hidden">
-      {/* Subtle ambient stage backlight */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-24 bg-cyan-600/5 blur-[100px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div className="py-10 bg-slate-50 border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {perks.map((p, idx) => {
             const Icon = p.icon;
             return (
               <div 
-                key={idx} 
-                className="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.2] hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                key={idx}
+                className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md hover:border-sky-300 transition duration-200 flex flex-col justify-between group"
               >
-                {/* Radial glow on hover */}
-                <div className={`absolute -right-10 -top-10 w-32 h-32 bg-gradient-to-br ${p.glow} rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
-
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.1] flex items-center justify-center shrink-0 group-hover:scale-105 transition duration-300">
-                      <Icon className={`w-5 h-5 transition-colors duration-300 ${p.accent}`} />
+                  <div className="flex items-center justify-between mb-3">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${p.iconBg} group-hover:scale-105 transition duration-200`}>
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.08] text-slate-300">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
                       {p.badge}
                     </span>
                   </div>
 
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 block mb-1 font-mono">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-0.5">
                     {p.tag}
                   </span>
-                  <h3 className="font-black text-white text-base tracking-tight mb-2 group-hover:text-amber-200 transition-colors">
+                  <h4 className="text-base font-black text-[#0a2540] mb-1.5">
                     {p.title}
-                  </h3>
-                  <p className="text-xs text-slate-400 font-light leading-relaxed">
+                  </h4>
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {p.desc}
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-white/[0.04] flex items-center gap-1.5 text-[11px] font-semibold text-slate-400 group-hover:text-white transition-colors">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Zero Risk Guarantee</span>
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-semibold text-sky-700">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-600" />
+                  <span>Verified Factory Privilege</span>
                 </div>
               </div>
             );
