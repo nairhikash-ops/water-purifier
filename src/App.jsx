@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustBar from './components/TrustBar';
 import WaterVitalitySection from './components/WaterVitalitySection';
-import ProductCatalog from './components/ProductCatalog';
+import CinematicShowcase from './components/CinematicShowcase';
 import TdsWaterGuide from './components/TdsWaterGuide';
 import AmcAndServices from './components/AmcAndServices';
 import TestimonialsAndFaq from './components/TestimonialsAndFaq';
@@ -69,7 +69,7 @@ export default function App() {
   const totalCartCount = cartItems.reduce((acc, i) => acc + i.quantity, 0);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800">
+    <div className="min-h-screen flex flex-col bg-[#07090e] text-slate-100 selection:bg-cyan-500 selection:text-black">
       {/* Navbar */}
       <Navbar
         cartCount={totalCartCount}
@@ -90,7 +90,7 @@ export default function App() {
           onOpenQuiz={() => setQuizOpen(true)}
           onOpenWaterTest={() => setWaterTestOpen(true)}
         />
-        <ProductCatalog
+        <CinematicShowcase
           onSelectProduct={(prod) => setSelectedProduct(prod)}
           onAddToCart={handleAddToCart}
         />

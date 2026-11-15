@@ -4,7 +4,7 @@ import { PhoneCall, Droplets, ShoppingCart } from 'lucide-react';
 
 export default function FloatingActions({ cartCount, onOpenCart, onOpenWaterTest }) {
   const handleWhatsApp = () => {
-    window.open(createWhatsAppUrl("Hello AquaPure! I'd like to consult with a water purifier expert about the best model for my home."), '_blank');
+    window.open(createWhatsAppUrl("Hello AquaPure! I'd like to consult with a certified water specialist about selecting the ideal model for my residence."), '_blank');
   };
 
   return (
@@ -13,7 +13,7 @@ export default function FloatingActions({ cartCount, onOpenCart, onOpenWaterTest
       <div className="fixed bottom-20 sm:bottom-6 right-5 z-40 flex flex-col items-end gap-2">
         <button
           onClick={handleWhatsApp}
-          className="group relative flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-2xl hover:scale-110 transition duration-300 shadow-emerald-900/30 glow-effect"
+          className="group relative flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-2xl hover:scale-110 transition duration-300 shadow-emerald-950/50"
           aria-label="Chat on WhatsApp"
         >
           <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
@@ -21,25 +21,25 @@ export default function FloatingActions({ cartCount, onOpenCart, onOpenWaterTest
           </svg>
           
           {/* Tooltip on hover */}
-          <span className="hidden group-hover:block absolute right-16 top-1/2 -translate-y-1/2 bg-slate-900 text-white text-xs font-bold py-1.5 px-3 rounded-xl whitespace-nowrap shadow-lg">
-            Chat with Water Expert
+          <span className="hidden group-hover:block absolute right-16 top-1/2 -translate-y-1/2 bg-[#0c101a] text-white text-xs font-bold py-1.5 px-3 rounded-xl whitespace-nowrap shadow-xl border border-white/[0.1]">
+            Direct Chemist Consultation
           </span>
         </button>
       </div>
 
       {/* Mobile Sticky Bottom Conversion Bar (Visible on mobile screens) */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-3 py-2 flex items-center justify-between gap-2 shadow-lg">
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#07090e]/95 backdrop-blur-md border-t border-white/[0.1] px-3 py-2 flex items-center justify-between gap-2 shadow-2xl">
         <a
           href={`tel:${COMPANY_CONFIG.phoneRaw}`}
-          className="flex-1 bg-slate-900 text-white py-2.5 px-2 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5"
+          className="flex-1 bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.15] text-white py-2.5 px-2 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition"
         >
-          <PhoneCall className="w-3.5 h-3.5" />
-          <span>Call Expert</span>
+          <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
+          <span>Call Hub</span>
         </a>
 
         <button
           onClick={onOpenWaterTest}
-          className="flex-1 bg-emerald-600 text-white py-2.5 px-2 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5"
+          className="flex-1 bg-emerald-500 hover:bg-emerald-400 text-black py-2.5 px-2 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 transition"
         >
           <Droplets className="w-3.5 h-3.5" />
           <span>Free Test</span>
@@ -47,12 +47,12 @@ export default function FloatingActions({ cartCount, onOpenCart, onOpenWaterTest
 
         <button
           onClick={onOpenCart}
-          className="relative bg-brand-50 text-brand-700 border border-brand-200 py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center"
-          aria-label="Cart"
+          className="relative bg-white/[0.08] border border-white/[0.15] text-white py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center transition"
+          aria-label="Portfolio Cart"
         >
-          <ShoppingCart className="w-4 h-4" />
+          <ShoppingCart className="w-4 h-4 text-cyan-400" />
           {cartCount > 0 && (
-            <span className="absolute -top-1 -right-1 bg-brand-600 text-white font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+            <span className="absolute -top-1 -right-1 bg-amber-500 text-black font-black text-[10px] w-4 h-4 rounded-full flex items-center justify-center shadow">
               {cartCount}
             </span>
           )}
