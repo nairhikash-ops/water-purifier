@@ -1,236 +1,234 @@
 import React, { useState } from 'react';
 import { COMPANY_CONFIG, createWhatsAppUrl } from '../data/companyConfig';
 import { 
-  Sparkles, 
-  ArrowRight, 
-  ShieldCheck, 
+  AlertTriangle, 
   Droplets, 
-  Zap, 
-  Activity,
-  CheckCircle,
-  Eye
+  ShieldCheck, 
+  ArrowRight, 
+  CheckCircle2, 
+  Activity, 
+  Sparkles,
+  PhoneCall,
+  Calendar,
+  Zap,
+  Clock
 } from 'lucide-react';
 
 export default function Hero({ onOpenQuiz, onOpenWaterTest }) {
-  const [activeModel, setActiveModel] = useState('cloud'); // 'cloud' | 'merlin' | 'prime'
+  const [quickPincode, setQuickPincode] = useState('');
+  const [quickPhone, setQuickPhone] = useState('');
+  const [quickSubmitted, setQuickSubmitted] = useState(false);
 
-  const models = {
-    cloud: {
-      name: "Cloud Aqua One 3 (Luxury Slate)",
-      tagline: "8-Stage RO + Bio-Copper + Zinc + Active Alkaline",
-      image: "/images/cloud-aqua-one3-grey.jpeg",
-      price: 10499,
-      mrp: 18500,
-      ph: "pH 8.5+",
-      orp: "-200 mV",
-      purity: "99.8%"
-    },
-    merlin: {
-      name: "Merlin Matrix (ISI Certified)",
-      tagline: "Endorsed by Tisca Chopra • Triple Layer Ionization",
-      image: "/images/merlin-matrix-black-tisca.jpeg",
-      price: 11499,
-      mrp: 19999,
-      ph: "pH 8.8",
-      orp: "-220 mV",
-      purity: "99.9%"
-    },
-    prime: {
-      name: "Aqua System Prime (Under-The-Sink)",
-      tagline: "Hidden Luxury • SS Gooseneck Faucet • Pressurized Tank",
-      image: "/images/aqua-prime-under-sink.jpeg",
-      price: 10999,
-      mrp: 18999,
-      ph: "pH 8.5",
-      orp: "-180 mV",
-      purity: "99.8%"
+  const handleQuickAuditSubmit = (e) => {
+    e.preventDefault();
+    if (!quickPhone) {
+      onOpenWaterTest();
+      return;
     }
-  };
-
-  const current = models[activeModel];
-
-  const handleWhatsApp = () => {
-    const text = `Hello AquaPure! I would like to reserve the *${current.name}* at the direct factory privilege rate (₹${current.price.toLocaleString('en-IN')}). Please arrange doorstep inspection.`;
-    window.open(createWhatsAppUrl(text), '_blank');
+    const msg = `*💧 Priority Doorstep Water TDS Audit Request*\n\n`
+      + `*Contact Number:* ${quickPhone}\n`
+      + `*Pincode / Area:* ${quickPincode || 'To be shared on call'}\n\n`
+      + `Please arrange a certified technician with a calibrated digital TDS & water mineral tester.`;
+    window.open(createWhatsAppUrl(msg), '_blank');
+    setQuickSubmitted(true);
   };
 
   return (
-    <section className="relative min-h-[92vh] bg-[#07090e] text-white overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 border-b border-white/[0.08] flex items-center">
-      {/* Cinematic Ambient Stage Lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[650px] copper-stage-light rounded-full blur-[130px] pointer-events-none -z-10" />
-      <div className="absolute -top-32 right-10 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute -bottom-32 left-10 w-96 h-96 bg-amber-600/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+    <section className="relative min-h-[92vh] bg-[#06080d] text-white overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 border-b border-white/[0.08] flex items-center">
+      {/* Bio-Hazard & Pure Caustic Ambient Backlights */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-rose-950/20 rounded-full blur-[160px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[160px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-amber-600/10 blur-[130px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         
-        {/* Top Minimalist Tag */}
+        {/* Fear & Caution Eyebrow */}
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2.5 bg-white/[0.04] border border-white/[0.1] px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-widest uppercase text-slate-300">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-            <span>0.0001µ RO Precision • Ayurvedic Copper • Active Alkaline</span>
+          <div className="inline-flex items-center gap-2.5 bg-rose-950/40 border border-rose-500/40 px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase text-rose-300 shadow-lg shadow-rose-950/30">
+            <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
+            <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />
+            <span>Before You Buy Any Purifier • Uncover The Invisible Threat</span>
           </div>
         </div>
 
-        {/* Massive Sculptural Typography */}
+        {/* Monumental Headline: The Problem & The Truth */}
         <div className="text-center max-w-5xl mx-auto mb-10 sm:mb-14">
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] uppercase">
-            THE ARCHITECTURE <br />
-            <span className="metallic-copper-text">OF LIVING WATER.</span>
+            DO YOU KNOW WHAT <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-amber-300 to-emerald-400">
+              YOUR FAMILY IS DRINKING?
+            </span>
           </h1>
-          <p className="mt-5 text-sm sm:text-base md:text-lg text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
-            Engineered to transcend ordinary filtration. We infuse clinical 0.0001-micron Reverse Osmosis with 
-            bio-active copper ions and antioxidant molecular hydrogen. Pure, mineral-rich, direct from the source.
+          <p className="mt-5 text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
+            Most families buy water purifiers blindfolded. Yet high dissolved heavy metals, chlorine byproducts, and dead acidic RO water silently burden your kidneys, deplete bone minerals, and harm your children's immunity every single day.
+          </p>
+          <p className="mt-2 text-xs sm:text-sm text-cyan-300 font-medium">
+            We test your water first — at your doorstep, with a calibrated digital TDS & mineral analyzer. 100% Free. Zero guesswork.
           </p>
         </div>
 
-        {/* Central Theatrical Stage */}
-        <div className="relative max-w-4xl mx-auto">
-          
-          {/* Main Elevated Plinth Container */}
-          <div className="relative rounded-3xl p-6 sm:p-10 luxury-glass overflow-hidden border border-white/[0.1] shadow-2xl">
+        {/* Central Split Plinth: The Fear vs. The Confidence */}
+        <div className="max-w-5xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            {/* Top Stage Controls: Switch Spotlight Purifier */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-white/[0.08]">
+            {/* Left Plinth: The Fear (Untested Tap / Borewell / Cheap RO) */}
+            <div className="rounded-3xl p-6 sm:p-8 bg-gradient-to-b from-rose-950/20 to-black/60 border border-rose-500/25 relative overflow-hidden flex flex-col justify-between group hover:border-rose-500/40 transition duration-300">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-rose-600/10 rounded-full blur-2xl pointer-events-none" />
+
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Featured Masterpiece</span>
-                <h3 className="text-xl sm:text-2xl font-black text-white mt-0.5">{current.name}</h3>
-                <p className="text-xs text-slate-400 font-light">{current.tagline}</p>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md bg-rose-950/80 text-rose-300 border border-rose-500/40 flex items-center gap-1.5">
+                    <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />
+                    The Unseen Bio-Burden
+                  </span>
+                  <span className="text-[11px] font-mono font-bold text-rose-400">Untested Tap / Borewell</span>
+                </div>
+
+                <h3 className="text-xl sm:text-2xl font-black text-white mb-2">
+                  Dissolved Heavy Salts & Acidic Leaching
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed font-light mb-6">
+                  Water that smells clean can hide toxic dissolved solids. Borewell water above 600 TDS strains kidney filtration, while cheap unmineralized RO water becomes aggressively acidic (pH &lt;6.2), leaching vital calcium from your bones.
+                </p>
+
+                {/* Diagnostic Indicators */}
+                <div className="space-y-2.5 text-xs">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                    <span className="text-slate-400">Total Dissolved Solids (TDS)</span>
+                    <span className="font-mono font-bold text-rose-400">650 – 1,400+ PPM (Hazardous)</span>
+                  </div>
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                    <span className="text-slate-400">Biological pH State</span>
+                    <span className="font-mono font-bold text-amber-400">5.8 – 6.5 pH (Corrosive Acidic)</span>
+                  </div>
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                    <span className="text-slate-400">Oxidation-Reduction (ORP)</span>
+                    <span className="font-mono font-bold text-rose-400">+320 mV (Accelerates Aging)</span>
+                  </div>
+                </div>
               </div>
 
-              {/* Model Switcher Tabs */}
-              <div className="flex items-center gap-1.5 p-1 bg-black/40 rounded-xl border border-white/[0.08]">
-                <button
-                  onClick={() => setActiveModel('cloud')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wider transition ${
-                    activeModel === 'cloud'
-                      ? 'bg-gradient-to-r from-cyan-600 to-brand-700 text-white shadow-md'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  Cloud Aqua
-                </button>
-                <button
-                  onClick={() => setActiveModel('merlin')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wider transition ${
-                    activeModel === 'merlin'
-                      ? 'bg-gradient-to-r from-rose-600 to-amber-600 text-white shadow-md'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  Merlin Matrix
-                </button>
-                <button
-                  onClick={() => setActiveModel('prime')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wider transition ${
-                    activeModel === 'prime'
-                      ? 'bg-gradient-to-r from-amber-600 to-teal-700 text-white shadow-md'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  Under-The-Sink
-                </button>
+              <div className="mt-6 pt-4 border-t border-rose-500/15 text-[11px] text-rose-300 font-semibold flex items-center gap-1.5">
+                <span>⚠️ Potential risk: Acidity, kidney stress, fatigue & limescale</span>
               </div>
             </div>
 
-            {/* Stage Body: Illuminated Product + Floating Spec Callouts */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center py-8">
-              
-              {/* Left Architectural Specs */}
-              <div className="md:col-span-3 space-y-6 text-center md:text-left order-2 md:order-1">
-                <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400 block">Cellular pH</span>
-                  <span className="text-2xl font-black metallic-cyan-text block mt-0.5">{current.ph}</span>
-                  <span className="text-[11px] text-slate-400">Restores bodily balance</span>
-                </div>
+            {/* Right Plinth: The Confidence (The Living Pure Water Standard) */}
+            <div className="rounded-3xl p-6 sm:p-8 bg-gradient-to-b from-cyan-950/30 to-emerald-950/20 border border-cyan-500/30 relative overflow-hidden flex flex-col justify-between group hover:border-cyan-400/50 transition duration-300">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
 
-                <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400 block">Antioxidant ORP</span>
-                  <span className="text-2xl font-black metallic-copper-text block mt-0.5">{current.orp}</span>
-                  <span className="text-[11px] text-slate-400">Scavenges free radicals</span>
-                </div>
-
-                <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400 block">Purity Threshold</span>
-                  <span className="text-2xl font-black text-emerald-400 block mt-0.5">{current.purity}</span>
-                  <span className="text-[11px] text-slate-400">Zero cysts & heavy metals</span>
-                </div>
-              </div>
-
-              {/* Center Plinth: Monumental Product Photography */}
-              <div className="md:col-span-6 relative flex items-center justify-center order-1 md:order-2">
-                {/* Plinth Glow */}
-                <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 via-amber-500/10 to-transparent rounded-full blur-2xl -z-10" />
-
-                <div className="h-72 sm:h-84 md:h-96 w-full flex items-center justify-center p-2 relative">
-                  <img
-                    src={current.image}
-                    alt={current.name}
-                    className="max-h-full w-auto object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.85)] hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-              </div>
-
-              {/* Right Direct Privilege & Actions */}
-              <div className="md:col-span-3 space-y-4 text-center md:text-left order-3">
-                <div className="p-4 rounded-2xl bg-black/40 border border-white/[0.08]">
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-amber-400 block">
-                    Direct Factory Privilege
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md bg-cyan-950/80 text-cyan-300 border border-cyan-500/40 flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                    The Pure Living Standard
                   </span>
-                  <div className="flex items-baseline gap-2 mt-1 justify-center md:justify-start">
-                    <span className="text-3xl font-black text-white">₹{current.price.toLocaleString('en-IN')}</span>
-                    <span className="text-xs text-slate-500 line-through">₹{current.mrp.toLocaleString('en-IN')}</span>
-                  </div>
-                  <span className="text-[10px] text-emerald-400 font-semibold block mt-1">
-                    White-Glove Installation Included
-                  </span>
+                  <span className="text-[11px] font-mono font-bold text-emerald-400">Certified Post-Audit</span>
                 </div>
 
-                <button
-                  onClick={handleWhatsApp}
-                  className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold py-3.5 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/20 transition transform hover:-translate-y-0.5"
-                >
-                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-                  </svg>
-                  <span>Reserve on WhatsApp</span>
-                </button>
-
-                <a
-                  href="#showcase"
-                  className="w-full bg-white/[0.05] hover:bg-white/[0.1] text-white font-semibold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-1.5 border border-white/[0.08] transition"
-                >
-                  <span>View All 10 Masterpieces</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-cyan-400" />
-                </a>
-
-                <p className="text-[10px] text-slate-500 text-center">
-                  Zero advance • Pay after on-site TDS test & mounting
+                <h3 className="text-xl sm:text-2xl font-black text-white mb-2">
+                  Clinical Purity & Cellular Vitality
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed font-light mb-6">
+                  Water calibrated to your home's exact chemistry. 0.0001-micron Reverse Osmosis strips all heavy metals, followed by Ayurvedic Copper ionization and bio-active minerals to restore sweet taste, antioxidant power, and vibrant cellular energy.
                 </p>
+
+                {/* Diagnostic Indicators */}
+                <div className="space-y-2.5 text-xs">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.04] border border-cyan-500/20">
+                    <span className="text-slate-300">Calibrated Safe TDS</span>
+                    <span className="font-mono font-bold text-emerald-400">90 – 120 PPM (Mountain Sweet)</span>
+                  </div>
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.04] border border-cyan-500/20">
+                    <span className="text-slate-300">Living Alkaline pH</span>
+                    <span className="font-mono font-bold text-cyan-300">8.5 – 9.0 pH (Restores Balance)</span>
+                  </div>
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.04] border border-cyan-500/20">
+                    <span className="text-slate-300">Antioxidant Potential (ORP)</span>
+                    <span className="font-mono font-bold text-emerald-400">-220 mV (Free-Radical Neutralizer)</span>
+                  </div>
+                </div>
               </div>
 
+              <div className="mt-6 pt-4 border-t border-cyan-500/20 text-[11px] text-cyan-300 font-semibold flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span>100% Peace of mind: Zero organ strain & crisp natural hydration</span>
+              </div>
             </div>
 
           </div>
-
         </div>
 
-        {/* Minimalist Architectural Stats Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-white/[0.08] text-center">
-          <div>
-            <span className="text-2xl sm:text-3xl font-black text-white">0.0001 µ</span>
-            <span className="text-[11px] text-slate-400 block mt-0.5 uppercase tracking-wider">Membrane Precision</span>
+        {/* The Action Console: Book Free Doorstep Audit Before Choosing */}
+        <div className="max-w-3xl mx-auto rounded-3xl luxury-glass p-6 sm:p-8 border border-white/[0.12] shadow-2xl relative">
+          <div className="text-center mb-6">
+            <span className="text-[10px] font-black uppercase tracking-widest text-amber-400 bg-amber-950/60 border border-amber-500/30 px-3 py-1 rounded-full">
+              Step 1: Test Before You Invest
+            </span>
+            <h3 className="text-xl sm:text-2xl font-black text-white mt-2">
+              Claim Your Free Doorstep Water TDS & Mineral Audit
+            </h3>
+            <p className="text-xs text-slate-400 font-light mt-1 max-w-lg mx-auto">
+              Our certified water technician arrives with calibrated digital meters to test your tap water and your existing purifier. Completely free • Zero obligation to purchase.
+            </p>
           </div>
-          <div>
-            <span className="text-2xl sm:text-3xl font-black metallic-copper-text">100% Food-Grade</span>
-            <span className="text-[11px] text-slate-400 block mt-0.5 uppercase tracking-wider">Virgin ABS Polymer</span>
+
+          {quickSubmitted ? (
+            <div className="p-4 rounded-2xl bg-emerald-950/60 border border-emerald-500/40 text-center space-y-2">
+              <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto" />
+              <h4 className="font-bold text-white text-sm">Audit Dispatched via WhatsApp!</h4>
+              <p className="text-xs text-slate-300">Our regional chemist will confirm your technician arrival window shortly.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleQuickAuditSubmit} className="space-y-3 sm:space-y-0 sm:flex sm:items-center sm:gap-2.5">
+              <input
+                type="tel"
+                required
+                placeholder="Enter Mobile / WhatsApp Number"
+                value={quickPhone}
+                onChange={(e) => setQuickPhone(e.target.value)}
+                className="w-full sm:flex-1 px-4 py-3.5 bg-white/[0.05] border border-white/[0.12] rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition"
+              />
+              <input
+                type="text"
+                placeholder="Your Pincode (e.g. 400050)"
+                value={quickPincode}
+                onChange={(e) => setQuickPincode(e.target.value)}
+                className="w-full sm:w-44 px-4 py-3.5 bg-white/[0.05] border border-white/[0.12] rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition"
+              />
+              <button
+                type="submit"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-black font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition shrink-0"
+              >
+                <span>Book Free Audit</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </form>
+          )}
+
+          {/* Quick reassurance pills */}
+          <div className="mt-5 pt-4 border-t border-white/[0.06] flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-[11px] text-slate-400">
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              100% Free Doorstep Visit
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              Calibrated Digital TDS Meter
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              No Purchase Required
+            </span>
           </div>
-          <div>
-            <span className="text-2xl sm:text-3xl font-black text-cyan-400">24-48 Hours</span>
-            <span className="text-[11px] text-slate-400 block mt-0.5 uppercase tracking-wider">White-Glove Setup</span>
-          </div>
-          <div>
-            <span className="text-2xl sm:text-3xl font-black text-emerald-400">1-Year On-Site</span>
-            <span className="text-[11px] text-slate-400 block mt-0.5 uppercase tracking-wider">Comprehensive Warranty</span>
+
+          <div className="mt-3 text-center">
+            <a 
+              href="#options" 
+              className="text-[11px] text-cyan-400/90 hover:text-cyan-300 font-semibold underline underline-offset-4 transition"
+            >
+              Or browse our certified Good & Very Good Purifier options →
+            </a>
           </div>
         </div>
 

@@ -67,25 +67,25 @@ export default function Footer({ onOpenAdmin, onOpenWaterTest, onOpenQuiz }) {
             <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-300">Navigation</h4>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <a href="#showcase" className="hover:text-white transition flex items-center gap-1">
-                  Water Architecture
+                <a href="#vitality" className="hover:text-white transition">The Living Standard</a>
+              </li>
+              <li>
+                <a href="#tds-guide" className="hover:text-white transition">TDS Hazard Matrix</a>
+              </li>
+              <li>
+                <a href="#options" className="hover:text-white transition flex items-center gap-1">
+                  Prescribed Options
                 </a>
               </li>
               <li>
-                <a href="#vitality" className="hover:text-white transition">Living Water Science</a>
+                <a href="#reviews" className="hover:text-white transition">Verified Stories</a>
               </li>
               <li>
-                <a href="#tds-guide" className="hover:text-white transition">TDS Diagnostic Matrix</a>
-              </li>
-              <li>
-                <a href="#amc" className="hover:text-white transition">Concierge AMC Care</a>
-              </li>
-              <li>
-                <a href="#reviews" className="hover:text-white transition">Connoisseur Reviews</a>
+                <a href="#concierge" className="hover:text-white transition">Care Shield (AMC)</a>
               </li>
               <li>
                 <button onClick={onOpenQuiz} className="hover:text-cyan-400 transition text-left text-cyan-400">
-                  Interactive Purifier Quiz
+                  Prescribe My Purifier
                 </button>
               </li>
             </ul>

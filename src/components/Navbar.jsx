@@ -71,35 +71,35 @@ export default function Navbar({
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-wider uppercase text-slate-300">
-          <a href="#showcase" className="hover:text-cyan-400 transition flex items-center gap-1.5">
-            The Collection
-          </a>
           <a href="#vitality" className="hover:text-cyan-400 transition flex items-center gap-1.5 text-cyan-400">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> Living Water Science
+            <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> The Living Standard
           </a>
           <a href="#tds-guide" className="hover:text-cyan-400 transition flex items-center gap-1.5">
-            TDS Diagnostics
+            TDS Hazard Matrix
           </a>
-          <a href="#concierge" className="hover:text-cyan-400 transition flex items-center gap-1.5">
-            Concierge & Care
+          <a href="#options" className="hover:text-cyan-400 transition flex items-center gap-1.5">
+            Prescribed Options
+          </a>
+          <a href="#concierge" className="hover:text-slate-400 transition flex items-center gap-1.5 text-slate-400">
+            Care Shield
           </a>
           <button 
             onClick={onOpenQuiz} 
             className="text-amber-300 hover:text-amber-200 transition flex items-center gap-1.5 bg-amber-950/40 hover:bg-amber-900/40 px-3 py-1.5 rounded-lg border border-amber-500/30 text-[11px]"
           >
-            <Sparkles className="w-3 h-3 text-amber-400" /> Find My Purifier
+            <Sparkles className="w-3 h-3 text-amber-400" /> Prescribe My System
           </button>
         </nav>
 
         {/* Right Actions */}
         <div className="flex items-center gap-3">
-          {/* Free Water Consultation Pill */}
+          {/* Free Water Consultation Pill (Hero Priority) */}
           <button 
             onClick={onOpenWaterTest}
-            className="hidden sm:inline-flex items-center gap-1.5 bg-white/[0.05] hover:bg-white/[0.1] border border-cyan-500/30 text-cyan-300 hover:text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition duration-300"
+            className="hidden sm:inline-flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black font-black text-xs px-4 py-2.5 rounded-xl transition duration-300 shadow-lg shadow-emerald-500/20 uppercase tracking-wider"
           >
-            <Droplets className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Book TDS Audit</span>
+            <Droplets className="w-3.5 h-3.5" />
+            <span>Book Free TDS Audit</span>
           </button>
 
           {/* Cart Icon */}

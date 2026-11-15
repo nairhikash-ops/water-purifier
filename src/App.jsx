@@ -90,17 +90,17 @@ export default function App() {
           onOpenQuiz={() => setQuizOpen(true)}
           onOpenWaterTest={() => setWaterTestOpen(true)}
         />
+        <TdsWaterGuide
+          onOpenWaterTest={() => setWaterTestOpen(true)}
+        />
         <CinematicShowcase
           onSelectProduct={(prod) => setSelectedProduct(prod)}
           onAddToCart={handleAddToCart}
         />
-        <TdsWaterGuide
-          onOpenWaterTest={() => setWaterTestOpen(true)}
-        />
+        <TestimonialsAndFaq />
         <AmcAndServices
           onBookingSuccess={() => {}}
         />
-        <TestimonialsAndFaq />
       </main>
 
       {/* Footer */}

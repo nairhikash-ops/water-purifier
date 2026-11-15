@@ -5,43 +5,45 @@ import {
   ShieldCheck, 
   Droplet,
   Sparkles,
-  Award
+  Award,
+  CheckCircle2,
+  Lock
 } from 'lucide-react';
 
 export default function TrustBar() {
   const perks = [
     {
-      icon: BadgePercent,
-      tag: "Direct Advantage",
-      title: "Direct Factory Pricing",
-      desc: "Bypass retail markups and showroom rentals. Direct-from-source luxury at up to 45% below high-street retail.",
-      accent: "text-amber-400 group-hover:text-amber-300",
-      glow: "from-amber-500/10 to-transparent",
-      badge: "Save ₹5,000+"
+      icon: Lock,
+      tag: "Total Risk Reversal",
+      title: "Pay Only On TDS Proof",
+      desc: "Zero advance deposit required. The master technician mounts the system and proves TDS drop before your eyes before you pay.",
+      accent: "text-emerald-400 group-hover:text-emerald-300",
+      glow: "from-emerald-500/10 to-transparent",
+      badge: "₹0 Advance"
     },
     {
       icon: Truck,
-      tag: "White Glove Care",
+      tag: "White Glove Deployment",
       title: "24-48h Doorstep Setup",
-      desc: "Certified master water technicians deliver, precision-mount, and calibrate TDS in front of you.",
+      desc: "Certified master technicians deliver, precision wall-mount, calibrate TDS, and demo alkaline copper taste complimentary.",
       accent: "text-cyan-400 group-hover:text-cyan-300",
       glow: "from-cyan-500/10 to-transparent",
       badge: "Complimentary"
     },
     {
       icon: ShieldCheck,
-      tag: "Zero Risk Ownership",
+      tag: "Complete Sanctuary Shield",
       title: "1-Year On-Site Warranty",
-      desc: "Complete comprehensive warranty shielding booster pump, SMPS electricals, SV, and all doorstep technician labor.",
-      accent: "text-emerald-400 group-hover:text-emerald-300",
-      glow: "from-emerald-500/10 to-transparent",
+      desc: "Full comprehensive coverage for booster pump, SMPS electrical adapter, Solenoid Valve, and all technician labor with 24h SLA.",
+      accent: "text-amber-400 group-hover:text-amber-300",
+      glow: "from-amber-500/10 to-transparent",
       badge: "100% Protected"
     },
     {
       icon: Droplet,
-      tag: "Certified Integrity",
+      tag: "Clinical Bio-Safety",
       title: "100% Certified Spares",
-      desc: "Authentic 80 GPD heavy-duty membranes, food-grade virgin housings, and laboratory-grade alkaline mineralization cartridges.",
+      desc: "Zero toxic recycled plastics. Authentic 80 GPD heavy-duty membranes, NSF-certified minerals, and food-grade virgin housings.",
       accent: "text-sky-400 group-hover:text-sky-300",
       glow: "from-sky-500/10 to-transparent",
       badge: "Pure Bio-Safe"
@@ -49,7 +51,7 @@ export default function TrustBar() {
   ];
 
   return (
-    <div className="py-12 bg-[#07090e] border-y border-white/[0.08] relative overflow-hidden">
+    <div className="py-12 bg-[#06080d] border-y border-white/[0.08] relative overflow-hidden">
       {/* Subtle ambient stage backlight */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-24 bg-cyan-600/5 blur-[100px] pointer-events-none" />
 
@@ -75,7 +77,7 @@ export default function TrustBar() {
                     </span>
                   </div>
 
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 block mb-1">
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 block mb-1 font-mono">
                     {p.tag}
                   </span>
                   <h3 className="font-black text-white text-base tracking-tight mb-2 group-hover:text-amber-200 transition-colors">
@@ -87,8 +89,8 @@ export default function TrustBar() {
                 </div>
 
                 <div className="mt-5 pt-3 border-t border-white/[0.04] flex items-center gap-1.5 text-[11px] font-semibold text-slate-400 group-hover:text-white transition-colors">
-                  <Sparkles className="w-3 h-3 text-amber-400/80" />
-                  <span>Direct Factory Privilege</span>
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Zero Risk Guarantee</span>
                 </div>
               </div>
             );

@@ -72,16 +72,16 @@ export default function TdsWaterGuide({ onOpenWaterTest }) {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-3 py-1 rounded-md mb-3">
+          <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-3 py-1 rounded-md mb-3">
             <SlidersHorizontal className="w-3 h-3" />
-            Diagnostic Purity Console
+            Hazard & Membrane Matrix • Step 2 of 3
           </div>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight uppercase">
-            Test Your Water TDS & Required Technology
+            ANALYZE YOUR WATER'S <span className="metallic-copper-text">HIDDEN CHEMICAL LOAD.</span>
           </h2>
           <p className="mt-3 text-xs sm:text-sm text-slate-400 font-light leading-relaxed">
-            Total Dissolved Solids (TDS) measures dissolved salts and minerals in PPM. 
-            Adjust the dial to evaluate your inlet water quality and identify the required membrane configuration.
+            Total Dissolved Solids (TDS) measures dissolved heavy salts, calcium, and micro-contaminants. 
+            Drag the dial to reveal the organ impact and identify the exact medical-grade membrane prescription needed.
           </p>
         </div>
 
