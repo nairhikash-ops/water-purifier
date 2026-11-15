@@ -1,0 +1,593 @@
+export const PRODUCTS = [
+  {
+    id: "cloud-aqua-one-3",
+    name: "Cloud International Aqua One 3 (Copper + Zinc + Alkaline)",
+    subtitle: "Triple Protection • Smart 3-Color LED Bar • Modern Kitchen Luxury",
+    category: "copper-alkaline",
+    badge: "Designer Series",
+    badgeColor: "bg-cyan-600",
+    image: "/images/cloud-aqua-one3-trio.jpeg",
+    colorImages: {
+      "Luxury Grey": "/images/cloud-aqua-one3-grey.jpeg",
+      "Pure White": "/images/cloud-aqua-one3-white.jpeg",
+      "Matte Black": "/images/cloud-aqua-one3-black.jpeg"
+    },
+    colorVariants: ["Luxury Grey", "Pure White", "Matte Black"],
+    mrp: 18500,
+    price: 10499,
+    discountPercent: 43,
+    rating: 5.0,
+    reviewCount: 142,
+    warranty: "1 Year Comprehensive On-Site",
+    storageCapacity: "9 Litres",
+    purificationRate: "16 L/hr",
+    suitableTds: "Up to 2,200 ppm (Borewell, Tanker & Tap)",
+    stagesCount: 8,
+    technology: "RO + Copper + Zinc + Active Alkaline + Micro UV",
+    keyFeatures: [
+      "Adds a contemporary luxury touch to modern modular kitchens",
+      "Triple Protection: Pure Copper + Vital Zinc + Natural Alkaline",
+      "Smart tri-color LED diagnostic bar (Power, Filtration, Full)",
+      "Heavy duty 100 GPD high-pressure booster pump for low pressure areas",
+      "Available in 3 stunning finishes: Slate Grey, Pearl White, Matte Black"
+    ],
+    stages: [
+      "1. External Anti-Scalant Pre-Filter (Protects membrane from scaling)",
+      "2. Melt-Blown Micro Sediment Cartridge",
+      "3. Premium Coconut Shell Carbon Block (900 IV Iodine Value)",
+      "4. 80 GPD Dry RO Membrane (97% salt rejection)",
+      "5. Copper Enrichment Zone (Micro-dosed copper for gut health)",
+      "6. Zinc Infusion Zone (Enhances immunity & enzymatic functions)",
+      "7. Alkaline Calcite Chamber (Smooth, natural sweet taste)",
+      "8. UV Purification Guard in Tank (Keeps stored water sterile)"
+    ],
+    specs: {
+      "Purification Technology": "RO + Copper + Zinc + Alkaline + UV In-Tank",
+      "Storage Capacity": "9 Litres Food-Grade Tank",
+      "Filtration Speed": "15-18 LPH",
+      "TDS Handling": "Up to 2,200 ppm",
+      "Available Colors": "Luxury Grey, Pure White, Matte Black",
+      "Mounting": "Wall Mountable (Hooks & Template Included)",
+      "Operating Pressure": "0.3 to 3.0 kg/cm²",
+      "Warranty": "1 Year Free Doorstep On-Site Service"
+    }
+  },
+  {
+    id: "merlin-matrix-tisca",
+    name: "Merlin Matrix Copper Alkaline RO (ISI Certified)",
+    subtitle: "Style Meets Substance • Endorsed by Tisca Chopra • ISI IS 16240:2023 Certified",
+    category: "copper-alkaline",
+    badge: "ISI Certified",
+    badgeColor: "bg-rose-600",
+    image: "/images/merlin-matrix-black-tisca.jpeg",
+    colorImages: {
+      "Pitch Black": "/images/merlin-matrix-black-tisca.jpeg",
+      "Pure White": "/images/merlin-matrix-white-tisca.jpeg",
+      "Slate Grey": "/images/merlin-matrix-grey-tisca.jpeg"
+    },
+    colorVariants: ["Pitch Black", "Pure White", "Slate Grey"],
+    mrp: 19999,
+    price: 11499,
+    discountPercent: 42,
+    rating: 5.0,
+    reviewCount: 189,
+    warranty: "1 Year Comprehensive On-Site",
+    storageCapacity: "10 Litres",
+    purificationRate: "18 L/hr",
+    suitableTds: "Up to 2,500 ppm (Borewell & Hard Water)",
+    stagesCount: 8,
+    technology: "RO + Copper + Zinc + Alkaline + UV + UF",
+    keyFeatures: [
+      "Official ISI Certified Water Purifier (IS 16240:2023 - CM/L: 8100155736)",
+      "Endorsed by Bollywood actress Tisca Chopra",
+      "Triple Layer Protection: Zinc, Copper & Alkaline ionization",
+      "Solid brass designer copper dispensing tap",
+      "Aerodynamic sculpted cabinet with rose-gold metallic accents"
+    ],
+    stages: [
+      "1. High-Density Spun Sediment Pre-Filter",
+      "2. Inline Micron Particulate Filter",
+      "3. Activated Carbon Block (Absorbs chlorine & volatile organic chemicals)",
+      "4. Vontron / Filmtec 80 GPD High-TDS RO Membrane",
+      "5. Pure Copper Mineral Cartridge (Dissolves vital copper ions)",
+      "6. Zinc Infusion Cartridge (Boosts cellular immunity)",
+      "7. Active Alkaline Matrix (Balances water to pH 8.5+)",
+      "8. Silver Impregnated Post-Carbon Polisher"
+    ],
+    specs: {
+      "Certification": "Bureau of Indian Standards ISI Mark (IS 16240:2023)",
+      "Storage Tank": "10 Litres High-Capacity Tank",
+      "Available Colors": "Pitch Black, Pure White, Slate Grey",
+      "TDS Range": "Up to 2,500 ppm",
+      "Pump": "Heavy-duty 100 GPD Booster Pump",
+      "Dispensing": "Solid Copper Antique Tap Included",
+      "Warranty": "1 Year Free Doorstep Comprehensive Service"
+    }
+  },
+  {
+    id: "aqua-system-prime",
+    name: "Aqua System Prime RO + Copper Zinc Alkaline",
+    subtitle: "Honeycomb Accent Panel • Transparent Water Gauge • Pure Copper Tap",
+    category: "copper-alkaline",
+    badge: "Trending",
+    badgeColor: "bg-amber-600",
+    image: "/images/aqua-prime-grey-copper.jpeg",
+    colorImages: {
+      "Slate Grey": "/images/aqua-prime-grey-copper.jpeg",
+      "Aqua Sky Blue": "/images/aqua-prime-sky-blue.jpeg",
+      "Pearl White": "/images/aqua-prime-white-copper.jpeg",
+      "Matte Black": "/images/aqua-prime-black-copper.jpeg"
+    },
+    colorVariants: ["Slate Grey", "Aqua Sky Blue", "Pearl White", "Matte Black"],
+    mrp: 17500,
+    price: 9499,
+    discountPercent: 46,
+    rating: 4.9,
+    reviewCount: 167,
+    warranty: "1 Year Comprehensive On-Site",
+    storageCapacity: "9.5 Litres",
+    purificationRate: "16 L/hr",
+    suitableTds: "Up to 2,000 ppm",
+    stagesCount: 8,
+    technology: "RO + Copper + Zinc + Alkaline + Micro UV",
+    keyFeatures: [
+      "Distinctive geometric honeycomb shoulder detailing with rose-copper shield",
+      "Built-in vertical transparent illuminated water level indicator",
+      "Smart 3-LED status console (Power, Purify, Tank Full)",
+      "Triple power of Copper, Alkaline & Zinc technology",
+      "Available in 4 contemporary colors: Grey, Sky Blue, White, Black"
+    ],
+    stages: [
+      "1. External Pre-Filter (Removes sand, rust, grit)",
+      "2. Inline Sediment Filter (5 Micron)",
+      "3. Activated Carbon Block (Absorbs chlorine, pesticides)",
+      "4. 80 GPD Dry Sheet RO Membrane",
+      "5. Copper Ionic Infusion Chamber",
+      "6. Zinc Mineralizer Media",
+      "7. Alkaline Calcite Mineralizer",
+      "8. Post-Carbon Taste Sweetener"
+    ],
+    specs: {
+      "Storage Capacity": "9.5 Litres with Transparent Gauge",
+      "Color Options": "Slate Grey, Aqua Sky Blue, Pearl White, Matte Black",
+      "Dispenser Tap": "Metallic Rose-Copper Dispensing Valve",
+      "Inlet TDS": "100 - 2,000 ppm",
+      "Power Specs": "24V SMPS Adapter",
+      "Warranty": "1 Year Free On-Site Doorstep Service"
+    }
+  },
+  {
+    id: "aqua-system-prime-under-sink",
+    name: "Aqua System Prime Under-The-Sink RO Plant",
+    subtitle: "Hydro-Pneumatic Pressurized Tank • Swan-Neck Stainless Steel Faucet",
+    category: "domestic-ro",
+    badge: "Hidden Luxury",
+    badgeColor: "bg-indigo-600",
+    image: "/images/aqua-prime-under-sink.jpeg",
+    mrp: 18999,
+    price: 10999,
+    discountPercent: 42,
+    rating: 5.0,
+    reviewCount: 94,
+    warranty: "1 Year Comprehensive On-Site",
+    storageCapacity: "8 Litre Pressurized Tank",
+    purificationRate: "18 L/hr",
+    suitableTds: "Up to 2,200 ppm",
+    stagesCount: 8,
+    technology: "Under-Counter RO + Copper + Alkaline + SS Faucet",
+    keyFeatures: [
+      "Clutter-free countertop: Machine & pressurized tank remain hidden under kitchen sink",
+      "Premium 360° rotating swan-neck Stainless Steel 304 deck-mount faucet",
+      "Hydro-pneumatic sterile pressurized tank dispenses water at high pressure",
+      "Copper + Zinc + Alkaline mineralization for natural sweet taste",
+      "Ideal for modern modular kitchens, kitchen islands & granite countertops"
+    ],
+    stages: [
+      "1. External 10-inch Sediment Filter",
+      "2. Coconut Carbon Block Filter",
+      "3. Extruded Carbon Block Filter",
+      "4. 80 GPD High Recovery RO Membrane",
+      "5. Copper & Zinc Mineralizer",
+      "6. Active Alkaline pH Balancer",
+      "7. Post-Carbon In-line Polisher",
+      "8. Hydro-Pneumatic Pressurized Sterile Buffer Tank"
+    ],
+    specs: {
+      "Installation Type": "Under-The-Sink (Deck Mounted Faucet Included)",
+      "Storage Tank": "8 Litre Hydro-Pneumatic Food-Grade Tank",
+      "Faucet": "Solid SS-304 Gooseneck Designer Tap Included",
+      "Pressure Handling": "Works with low/high water pressure",
+      "Warranty": "1 Year Free Doorstep Service"
+    }
+  },
+  {
+    id: "aqua-era-forest-blue",
+    name: "Aqua Era Elite Series (Forest Blue)",
+    subtitle: "Pure. Premium. Powerful. • 9L Fluted Transparent Storage Tank",
+    category: "copper-alkaline",
+    badge: "Architectural",
+    badgeColor: "bg-blue-700",
+    image: "/images/aqua-era-forest-blue.jpeg",
+    mrp: 17999,
+    price: 9999,
+    discountPercent: 44,
+    rating: 4.9,
+    reviewCount: 112,
+    warranty: "1 Year Comprehensive On-Site",
+    storageCapacity: "9 Litres",
+    purificationRate: "16 L/hr",
+    suitableTds: "Up to 2,000 ppm",
+    stagesCount: 8,
+    technology: "RO + Alkaline + Copper + Multi-Stage",
+    keyFeatures: [
+      "Striking fluted translucent upper tank with architectural ribbed texture",
+      "Forest Blue matte cabinet with brushed chrome accent trim",
+      "Smart illuminated 'Drink on Time' hydration prompt display",
+      "Wide-mouth push lever dispenser for hands-free glass filling",
+      "Multi-stage high TDS salt rejection & alkaline balancing"
+    ],
+    stages: [
+      "1. Pre-Filter Sediment Spun",
+      "2. Inline Sediment Filter",
+      "3. High Adsorption Carbon Block",
+      "4. High Salt Rejection RO Membrane",
+      "5. Active Alkaline Ceramic Cartridge",
+      "6. Copper Enrichment Mineralizer",
+      "7. Post-Carbon Sweetener",
+      "8. UV Chamber in Storage Tank"
+    ],
+    specs: {
+      "Finish": "Forest Blue Matte with Fluted Ribbed Tank",
+      "Storage": "9 Litres Fluted Tank",
+      "TDS Tolerance": "Up to 2,000 ppm",
+      "Indicators": "Power, Full, Purify, Hydration Alert",
+      "Warranty": "1 Year Free On-Site Doorstep Service"
+    }
+  },
+  {
+    id: "merlin-planet-copper-alkaline",
+    name: "Merlin Planet Series Copper + Alkaline Purifier",
+    subtitle: "Smart LED Indicator • Brass Copper Tap • 3-Layer Bio Protection",
+    category: "copper-alkaline",
+    badge: "Best Value",
+    badgeColor: "bg-amber-700",
+    image: "/images/merlin-planet-copper-alkaline.jpeg",
+    colorImages: {
+      "Metallic Grey": "/images/merlin-planet-copper-alkaline.jpeg",
+      "Matte Black": "/images/merlin-planet-black.jpeg"
+    },
+    colorVariants: ["Metallic Grey", "Matte Black"],
+    mrp: 16999,
+    price: 9499,
+    discountPercent: 44,
+    rating: 4.8,
+    reviewCount: 164,
+    warranty: "1 Year Comprehensive On-Site",
+    storageCapacity: "9 Litres",
+    purificationRate: "15 L/hr",
+    suitableTds: "Up to 2,000 ppm",
+    stagesCount: 7,
+    technology: "RO + Bio-Copper + Alkaline + Mineralizer",
+    keyFeatures: [
+      "Eye-catching dual-tone Grey & Copper Shield front panel",
+      "Exclusive antique copper-finish heavy dispensing tap",
+      "Smart 3-LED alert panel (Power, Purification, Tank Full)",
+      "Retains essential natural minerals while killing 99.9% germs",
+      "Available in Metallic Grey and Matte Black finishes"
+    ],
+    stages: [
+      "1. Spun Fiber Pre-Filter (Removes sand, dirt, hair, particles)",
+      "2. Inline Sediment Filter (Protects carbon filter longevity)",
+      "3. High Absorption Inline Carbon (Chlorine, pesticides removal)",
+      "4. 80 GPD RO Sheet Membrane (Eliminates arsenic, lead & fluoride)",
+      "5. Bio-Copper Mineral Cartridge (Active copper ions infusion)",
+      "6. Antioxidant Alkaline Filter (pH regulation & negative ORP)",
+      "7. Silver Impregnated Carbon Post-Filter (Crisp mountain water taste)"
+    ],
+    specs: {
+      "Purification Stages": "7 Stages RO + Copper + Alkaline",
+      "Tank Capacity": "9 Litres Built-in Transparent Gauge Tank",
+      "Dispenser Tap": "Heavy Solid Copper Finish Tap Included",
+      "TDS Reduction": "Up to 95% TDS rejection",
+      "Weight": "Approx 7.8 Kg",
+      "Certification": "ISO 9001:2015 & Water Quality Tested",
+      "Warranty": "1 Year Free Doorstep On-Site Service"
+    }
+  },
+  {
+    id: "purosis-puroaqua-ro-alk",
+    name: "Purosis Puroaqua RO + Alkaline Purifier",
+    subtitle: "Alkaline Technology • 100% Food Grade • Redefining Purity",
+    category: "domestic-ro",
+    badge: "Bestseller",
+    badgeColor: "bg-emerald-500",
+    image: "/images/purosis-puroaqua-ro.jpeg",
+    mrp: 15500,
+    price: 8499,
+    discountPercent: 45,
+    rating: 4.9,
+    reviewCount: 142,
+    warranty: "1 Year Comprehensive On-Site",
+    storageCapacity: "8 Litres",
+    purificationRate: "15 L/hr",
+    suitableTds: "Up to 2,000 ppm (Borewell & Municipal)",
+    stagesCount: 7,
+    technology: "RO + Alkaline + Mineral Booster + UF",
+    keyFeatures: [
+      "Active Alkaline Technology maintains healthy 8.0+ pH balance",
+      "100% Food-Grade high impact ABS body",
+      "Antimicrobial protection preventing secondary bacteria growth",
+      "Smart LED power & purification status indicator",
+      "Compact wall-mount or tabletop aesthetic design"
+    ],
+    stages: [
+      "1. External Pre-Filter Candle (Removes physical dust & mud)",
+      "2. Sediment Filter 5 Micron (Traps micro-particles & rust)",
+      "3. Activated Carbon Block (Absorbs chlorine, odors & chemicals)",
+      "4. High TDS RO Membrane 80 GPD (Removes heavy metals & salts)",
+      "5. Alkaline Cartridge (Enriches water with alkaline antioxidants)",
+      "6. Mineral Booster (Restores calcium, magnesium & potassium)",
+      "7. Post-Carbon Polisher (Delivers crystal-clear sweet taste)"
+    ],
+    specs: {
+      "Purification Technology": "Reverse Osmosis + Alkaline Enrichment",
+      "Storage Capacity": "8 Litres Auto-Cutoff Tank",
+      "Filtration Capacity": "Up to 15 Litres/hour",
+      "Inlet Water TDS Range": "100 ppm to 2,000 ppm",
+      "Body Material": "Virgin Food Grade ABS Plastic",
+      "Power Consumption": "36 Watts (Energy Saver SMPS)",
+      "Installation Type": "Wall Mounted / Countertop",
+      "Warranty": "12 Months Free Doorstep On-Site Service"
+    }
+  },
+  {
+    id: "olivar-cyclone",
+    name: "Olivar International Cyclone 3-in-1 Purifier",
+    subtitle: "Copper + Zinc + Alkaline • Smart LED Console • Choose Safe Water",
+    category: "copper-alkaline",
+    badge: "Eco Vitality",
+    badgeColor: "bg-teal-600",
+    image: "/images/olivar-cyclone.jpeg",
+    mrp: 16499,
+    price: 8999,
+    discountPercent: 45,
+    rating: 4.8,
+    reviewCount: 78,
+    warranty: "1 Year Comprehensive On-Site",
+    storageCapacity: "9 Litres",
+    purificationRate: "15 L/hr",
+    suitableTds: "Up to 2,000 ppm",
+    stagesCount: 7,
+    technology: "RO + Copper + Zinc + Alkaline",
+    keyFeatures: [
+      "Triple Protection: Pure Copper, Active Zinc & Alkaline mineralization",
+      "Copper dispensing tap with dual-tone Copper and Black body",
+      "Vertical transparent level gauge to monitor pure water volume",
+      "Energy efficient silent booster pump with dry run protection",
+      "Certified 100% Food Grade non-toxic ABS polymer"
+    ],
+    stages: [
+      "1. Pre-Filter Polypropylene Candle",
+      "2. Micron Sediment Filter",
+      "3. Coconut Shell Carbon Cartridge",
+      "4. 80 GPD High Rejection RO Membrane",
+      "5. 3-in-1 Copper Zinc Alkaline Cartridge",
+      "6. Mineralizer Chamber",
+      "7. Silver Nano Taste Enhancer"
+    ],
+    specs: {
+      "Capacity": "9 Litres Storage",
+      "Technology": "RO + 3-in-1 Copper Zinc Alkaline",
+      "Body": "Virgin Food-Grade Polymer",
+      "Warranty": "1 Year Free Doorstep Service"
+    }
+  },
+  {
+    id: "lexcru-lexzon-compact",
+    name: "Lexcru Lexzon Compact Aqua Blue RO",
+    subtitle: "India's Largest RO Manufacturer • Compact Cabinet • LED Indicator",
+    category: "domestic-ro",
+    badge: "Compact Fit",
+    badgeColor: "bg-sky-600",
+    image: "/images/lexcru-lexzon-blue.jpeg",
+    mrp: 14500,
+    price: 7999,
+    discountPercent: 45,
+    rating: 4.8,
+    reviewCount: 135,
+    warranty: "1 Year Comprehensive On-Site",
+    storageCapacity: "8 Litres",
+    purificationRate: "15 L/hr",
+    suitableTds: "Up to 1,800 ppm",
+    stagesCount: 7,
+    technology: "RO + Alkaline + Copper + Pre-Filter",
+    keyFeatures: [
+      "Engineered by Lexcru - India's leading RO component manufacturer",
+      "Compact space-saving design: fits into small apartment kitchens with ease",
+      "Transparent Aqua Blue upper storage tank with LED alert lights",
+      "Fast recovery 15 LPH flow with auto cut-off switch",
+      "Budget friendly price point with zero compromise on water quality"
+    ],
+    stages: [
+      "1. External Pre-Filter Housing",
+      "2. Sediment Filter Cartridge",
+      "3. Activated Carbon Block",
+      "4. Lexcru High-Flow RO Membrane",
+      "5. Alkaline & Copper Infuser",
+      "6. Mineral Booster Cartridge",
+      "7. Post-Carbon Polisher"
+    ],
+    specs: {
+      "Storage": "8 Litres Aqua Blue Tank",
+      "Finish": "Compact Dual Tone White & Blue",
+      "Manufacturer": "Lexcru India",
+      "Warranty": "1 Year Free Doorstep Service"
+    }
+  },
+  {
+    id: "aqua-next-copper-alkaline",
+    name: "Aqua Next Pro RO + Copper with Alkaline",
+    subtitle: "10L Detachable Tank • Advanced Copper Infusion • Dual Alkaline",
+    category: "copper-alkaline",
+    badge: "Detachable Tank",
+    badgeColor: "bg-purple-600",
+    image: "/images/aqua-next-copper-alkaline.jpeg",
+    mrp: 17999,
+    price: 9999,
+    discountPercent: 44,
+    rating: 4.9,
+    reviewCount: 218,
+    warranty: "1 Year Comprehensive On-Site",
+    storageCapacity: "10 Litres (Detachable Tank)",
+    purificationRate: "18 L/hr",
+    suitableTds: "Up to 2,500 ppm (Hard Borewell, Tanker & City)",
+    stagesCount: 8,
+    technology: "RO + Copper + Alkaline + UV + TDS Controller",
+    colorVariants: ["Deep Purple (603)", "Premium Grey (602)", "Aqua Green (202)", "Royal Blue (201)", "Pitch Black (203)"],
+    keyFeatures: [
+      "10 Litre Detachable Storage Tank for effortless cleaning & washing",
+      "Real Copper Infusion adds ancient Ayurvedic wellness benefits",
+      "Dual Alkaline chamber elevates water pH & boosts immunity",
+      "Smart Multi-LED indicators for tank full, power & filter health",
+      "Available in 5 stunning metallic finish colors"
+    ],
+    stages: [
+      "1. High-Density Spun PP Pre-Filter (Removes sand & silt)",
+      "2. Granular Activated Carbon (Dechlorination & pesticide filtration)",
+      "3. Sediment Carbon Block (Eliminates fine suspended organics)",
+      "4. Vontron / Filmtec 80 GPD RO Membrane (TDS reduction by 95%)",
+      "5. Copper Infusion Media (Dissolves therapeutic copper ions)",
+      "6. Alkaline ORP Media (Generates antioxidant-rich hydrogen water)",
+      "7. Mineralizer Cartridge (Optimal electrolyte balancing)",
+      "8. UV Disinfection Chamber (Eliminates residual microbes)"
+    ],
+    specs: {
+      "Purification Technology": "RO + Copper + Alkaline + UV + UF",
+      "Storage Tank": "10 Litres Washable / Detachable Tank",
+      "Filtration Capacity": "15 to 18 Litres/hour",
+      "Inlet Water TDS": "Up to 2,500 ppm (High Salinity / Hard Water)",
+      "Body Material": "UV-Stabilized Food Grade Polymer",
+      "Available Colors": "Deep Purple, Premium Grey, Green, Blue, Black",
+      "Power Specs": "24V DC Booster Pump with 2.5A SMPS",
+      "Warranty": "1 Year Free Comprehensive Warranty"
+    }
+  },
+  {
+    id: "commercial-ro-plant-50lph",
+    name: "Commercial RO Water Plant (50 LPH)",
+    subtitle: "Heavy Duty Stainless Steel Skid • For Offices, Schools & Clinics",
+    category: "commercial",
+    badge: "Commercial Grade",
+    badgeColor: "bg-blue-600",
+    image: "/images/commercial-ro-plant-50lph-blue.jpeg",
+    colorImages: {
+      "Commercial Blue": "/images/commercial-ro-plant-50lph-blue.jpeg",
+      "Industrial Gold": "/images/commercial-ro-plant-50lph-gold.jpeg"
+    },
+    mrp: 29999,
+    price: 18499,
+    discountPercent: 38,
+    rating: 4.9,
+    reviewCount: 63,
+    warranty: "1 Year Free On-Site Commercial AMC Support",
+    storageCapacity: "Direct Flow / External Tank Compatible",
+    purificationRate: "50 Litres / Hour",
+    suitableTds: "Up to 3,000 ppm (Heavy Salinity / High Contamination)",
+    stagesCount: 6,
+    technology: "Double 100 GPD RO + Dual Carbon + Jumbo Micron Pre-Filter",
+    keyFeatures: [
+      "Full heavy-duty SS (Stainless Steel 304) robust stand frame",
+      "Caters to 50-100 employees, cafe customers, school classrooms",
+      "Dual high-pressure commercial booster pumps with auto-flush",
+      "Heavy-duty 20-inch Jumbo filter housings for sediment & carbon",
+      "Dry run protection and automatic high-pressure shutoff"
+    ],
+    stages: [
+      "1. 20-inch Jumbo Spun Polypropylene Filter (5 Micron)",
+      "2. 20-inch Jumbo CTO Carbon Block Filter",
+      "3. 20-inch Jumbo GAC Carbon Cartridge",
+      "4. Dual High-Flow 100 GPD RO Membranes (Parallel Flow)",
+      "5. Post-Carbon Odor & Mineral Polisher",
+      "6. In-line Heavy Duty UV Sterilizer System"
+    ],
+    specs: {
+      "Output Capacity": "50 Litres Per Hour",
+      "Frame Material": "Stainless Steel SS-304 Heavy Frame",
+      "Pumps": "2x 150 GPD High-Efficiency Commercial Booster Pumps",
+      "Membranes": "Dual Commercial Grade High Rejection Membranes",
+      "Application": "Offices, Hospitals, Gyms, Restaurants, Factories",
+      "Warranty": "1 Year Free On-Site Commercial AMC Support"
+    }
+  },
+  {
+    id: "universal-filter-service-kit",
+    name: "Universal 1-Year RO Filter Replacement Service Kit",
+    subtitle: "Complete 5-Filter Maintenance Pack Compatible with All RO Brands",
+    category: "spares",
+    badge: "Spare Parts",
+    badgeColor: "bg-purple-600",
+    image: "/images/purosis-puroaqua-ro.jpeg",
+    mrp: 2799,
+    price: 1499,
+    discountPercent: 46,
+    rating: 4.9,
+    reviewCount: 310,
+    warranty: "6 Months Replacement Warranty",
+    storageCapacity: "N/A (Replacement Spares)",
+    purificationRate: "Full Replacement Set",
+    suitableTds: "Compatible with all Domestic RO systems",
+    stagesCount: 5,
+    technology: "Sediment + Carbon + Post-Carbon + Spun Pre-Filter + Connectors",
+    keyFeatures: [
+      "100% Genuine NSF grade coconut shell carbon & spun filters",
+      "Restores 100% water flow rate and pristine natural water taste",
+      "Includes 1x Pre-Filter PP Candle, 1x Inline Sediment, 1x Inline Carbon, 1x Post-Carbon & 10x Quick Push Fittings",
+      "Free Teflon tape & 1/4 inch food grade pipe roll included"
+    ],
+    stages: [
+      "Universal replacement kit for Kent, Aquaguard, Pureit, Livpure, and all assembled RO purifiers"
+    ],
+    specs: {
+      "Package Contents": "1x Pre-Filter Candle, 1x Inline Sediment, 1x Inline Carbon, 1x Post Carbon, Push-Fit Elbows, 5m Pipe, Teflon Tape",
+      "Filter Life": "6,000 Litres or 9-12 Months",
+      "Fitting Type": "Quick Connect 1/4 inch Push-Fit",
+      "Compatibility": "Universal (Fits 99% Domestic RO Purifiers)"
+    }
+  },
+  {
+    id: "copper-alkaline-upgrade-cartridge",
+    name: "Bio-Copper + Alkaline 3-in-1 Retrofit Cartridge",
+    subtitle: "Turn Any Normal RO Purifier into an Alkaline & Copper Rich Unit",
+    category: "spares",
+    badge: "Health Upgrade",
+    badgeColor: "bg-emerald-600",
+    image: "/images/aqua-next-copper-alkaline.jpeg",
+    mrp: 1599,
+    price: 849,
+    discountPercent: 47,
+    rating: 5.0,
+    reviewCount: 185,
+    warranty: "6 Months Manufacturer Warranty",
+    storageCapacity: "N/A (Upgrade Filter)",
+    purificationRate: "Direct Flow",
+    suitableTds: "Universal Upgrade for any RO brand",
+    stagesCount: 3,
+    technology: "Pure Copper Beads + Alkaline Ceramic Balls + Bio-Minerals",
+    keyFeatures: [
+      "Instantly converts ordinary RO acidic water into healthy Alkaline water (pH 8.0 - 8.5)",
+      "Infuses essential natural Copper & Zinc ions without any manual copper vessel hassle",
+      "Produces negative ORP antioxidant water that helps fight cellular fatigue & aging",
+      "5-minute DIY installation: easily connects before the water storage tank"
+    ],
+    stages: [
+      "Pure Copper Infusion Layer + Alkaline Calcite Media + Far-Infrared Mineral Ceramic Balls"
+    ],
+    specs: {
+      "Cartridge Size": "10 Inch Standard Inline Size",
+      "Connection": "1/4 Inch Push-Fit Ports",
+      "Effective Life": "7,000 Litres (approx 12-14 Months for family of 4)",
+      "pH Range Produced": "8.0 to 9.2 pH (Healthy Alkaline)",
+      "ORP Value": "-50 mV to -250 mV (Antioxidant Rich)"
+    }
+  }
+];
